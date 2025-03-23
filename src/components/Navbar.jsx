@@ -54,9 +54,9 @@ const Navbar = () => {
 
      
       {isOpen && (
-        <div className="md:hidden bg-black/5 flex flex-col items-center space-y-4 py-4">
-          <a href="#" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">Dashboard</a>
-          <a href="#" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">About</a>
+        <div className="md:hidden bg-black/5 text-white flex flex-col items-center space-y-4 py-4">
+          <a href="/user-home" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">Dashboard</a>
+          <a href="/login" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">login</a>
           <a href="#" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">Projects</a>
           <a href="#" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">Contact</a>
         </div>
