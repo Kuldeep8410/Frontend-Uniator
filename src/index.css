@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.abc {
+    background-color: transparent;
+    display: flex;
+}
