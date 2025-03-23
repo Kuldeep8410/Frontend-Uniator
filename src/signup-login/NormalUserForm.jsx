@@ -54,25 +54,23 @@ function Normaluser() {
     // Handle form submission
     const submitHandler = async (e) => {
         e.preventDefault();
+
         if (NormaluserData.password === NormaluserData.confirmpass) {
-            const signupresponse = await SendDataSignLogin('signup', {
-                username: NormaluserData.username,
-                email: NormaluserData.email,
-                password: NormaluserData.password,
-                role: NormaluserData.role
-            });
+            localStorage.setItem("useremail", NormaluserData.email); // Ensure email is saved before redirecting
+
+            const signupresponse = await SendDataSignLogin('signup', SignUpData);
 
             if (signupresponse.error) {
                 toast.error(signupresponse.error);
             } else {
                 toast.success(signupresponse.message);
                 setTimeout(() => {
-                    navigate("/otpvarification");
+                    navigate("/otpvarication");
                 }, 1000);
             }
         } else {
-            SetMatch(false);
-            toast.warning("Passwords do not match");
+            SetMatch(!IsPassMatch);
+            toast.warning("Password not match");
         }
     };
 
@@ -101,7 +99,7 @@ function Normaluser() {
 
                 <button type="submit">Sign Up</button>
                 <span className="border rounded-md p-2 ml-2 text-red-500">
-                    Already have an account? 
+                    Already have an account?
                     <NavLink to="/login" className="ml-2 text-white bg-green-600 px-2 py-1 rounded-md">Login</NavLink>
                 </span>
 
