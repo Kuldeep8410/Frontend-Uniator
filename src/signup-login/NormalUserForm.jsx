@@ -54,12 +54,7 @@ function Normaluser() {
     }, []);
 
     // Save email on input change
-    useEffect(() => {
-        if (NormaluserData.email) {
-            localStorage.setItem("useremail", NormaluserData.email);
-            localStorage.setItem("email_timestamp", new Date().getTime());
-        }
-    }, [NormaluserData.email]);
+   
 
     // Handle form submission
     const submitHandler = async (e) => {
@@ -71,6 +66,11 @@ function Normaluser() {
                 password: NormaluserData.password,
                 role: NormaluserData.role
             });
+
+            if (NormaluserData.email) {
+                localStorage.setItem("useremail", NormaluserData.email);
+                localStorage.setItem("email_timestamp", new Date().getTime());
+            }
 
             if (signupresponse.error) {
                 toast.error(signupresponse.error);
