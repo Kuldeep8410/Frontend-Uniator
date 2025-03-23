@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function OtpVerification() {
     const navigate = useNavigate();
-    
+
     const [otp, setOtp] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -50,24 +50,37 @@ function OtpVerification() {
                 body: JSON.stringify({ otp, email }),
             });
 
+            if (!response.ok) {
+                // Attempt to parse error response, handle JSON parsing errors
+                let errorMessage = "OTP verification failed!";
+                try {
+                    const errorData = await response.json();
+                    errorMessage = errorData.message || errorMessage;
+                } catch (jsonError) {
+                    console.error("Error parsing JSON response:", jsonError);
+                }
+
+                setMessage(errorMessage);
+                toast.error(errorMessage);
+                return;  // Stop execution after error handling
+            }
+
             const data = await response.json();
             console.log("Backend OTP response:", data);
 
-            if (response.ok) {
-                setMessage("OTP verified successfully!");
-                toast.success("OTP verified successfully!");
+            setMessage("OTP verified successfully!");
+            toast.success("OTP verified successfully!");
 
-                setTimeout(() => {
-                    navigate('/login');
-                }, 1000);
-            } else {
-                setMessage(data.message || "OTP verification failed!");
-                toast.error(data.message || "OTP verification failed!");
-            }
+            setTimeout(() => {
+                navigate('/login');
+            }, 1000);
+
         } catch (error) {
+            console.error("Network or Fetch Error:", error);
             setMessage("Network error. Please try again.");
             toast.error("Network error. Please try again.");
         }
+
 
         setLoading(false);
     };
@@ -84,11 +97,10 @@ function OtpVerification() {
                 className="w-48 h-12 text-center text-xl font-bold border-2 border-blue-600 
                            focus:border-blue-400 focus:outline-none rounded-lg"
             />
-            <button 
+            <button
                 onClick={handleSubmit}
-                className={`mt-4 px-4 py-2 rounded-lg text-white ${
-                    otp.length === 6 ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"
-                }`}
+                className={`mt-4 px-4 py-2 rounded-lg text-white ${otp.length === 6 ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"
+                    }`}
                 disabled={otp.length !== 6 || loading}
             >
                 {loading ? "Verifying..." : "Submit"}
