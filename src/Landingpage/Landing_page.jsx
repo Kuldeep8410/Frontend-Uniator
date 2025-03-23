@@ -3,6 +3,7 @@ import Signup from "../signup-login/Signup";
 import Uniator from '../assets/image1.png'
 import Connects from "./Connects";
 import GridCards from "./GridLayout";
+import StatsSection from "./Upstash";
 
 
 function LandingPage() {
@@ -47,7 +48,9 @@ function LandingPage() {
 
 
 
+
             <Signup />
+            <StatsSection />
         </div>
     )
 }
