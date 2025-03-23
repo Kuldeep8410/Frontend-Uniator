@@ -1,8 +1,8 @@
 import { useContext, createContext, useState } from "react";
 
-const BASE_URL = "http://localhost:3000/mern-revision/v1";
-const BASE_URL_GET = "http://localhost:3000/mern-revision/v1/get"
-const BASE_URL_PUT = "http://localhost:3000/mern-revision/v1/put"
+const BASE_URL = "https://uniator-backend.onrender.com/mern-revision/v1";
+const BASE_URL_GET = "https://uniator-backend.onrender.com/mern-revision/v1/get"
+const BASE_URL_PUT = "https://uniator-backend.onrender.com/mern-revision/v1/put"
 
 export const AppContext = createContext();
 

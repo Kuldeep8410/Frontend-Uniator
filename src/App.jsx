@@ -37,6 +37,12 @@ import LandingPage from "./Landingpage/Landing_page";
 import ClassDetailParticular from "./user-pages/ClassDetailParicular";
 import StatsSection from "./Landingpage/Upstash";
 
+import QrWorking from "./Documention/QrWorking";
+import ClassCreate from './Documention/ClassCreate'
+import Attendance from "./Documention/AttendanceMarking"
+import GatePassWorking from "./Documention/GatePassWorking"
+import AttendanceMarking from "./Documention/AttendanceMarking";
+
 
 
 function App() {
@@ -108,6 +114,12 @@ function App() {
 
             <Route path="/makepost"element = {<MakePost />} />
             <Route path="/upstash" element = {<StatsSection />} />
+
+
+            <Route path="/KnowQr-WORKING"element = {<QrWorking />} />
+            <Route path="/KnowAttendanceMarking"element = {<AttendanceMarking />} />
+            <Route path="/classCreateTeacher"element = {<ClassCreate />} />
+            <Route path="/gatePassWorking"element = {<GatePassWorking />} />
 
 
           </Routes>
