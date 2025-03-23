@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import './From.css';
 import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -26,35 +26,30 @@ function Normaluser() {
         role: "normal-user",
     });
 
+    // Load email from localStorage on component mount
+    useEffect(() => {
+        const storedEmail = localStorage.getItem("useremail");
+        if (storedEmail) {
+            setNormalUserData(prevData => ({ ...prevData, email: storedEmail }));
+        }
+    }, []);
+
     // Handle input changes
     const changeHandler = (event) => {
         const { name, value } = event.target;
-        setNormalUserData((prevData) => ({
+        setNormalUserData(prevData => ({
             ...prevData,
             [name]: value,
         }));
         SetMatch(true);
     };
 
-    // Store email in localStorage with expiration time
+    // Save email to localStorage when it changes
     useEffect(() => {
-        const storedEmail = localStorage.getItem("useremail");
-        const storedTime = localStorage.getItem("email_timestamp");
-
-        if (storedEmail && storedTime) {
-            const currentTime = new Date().getTime();
-            const timeDiff = currentTime - parseInt(storedTime);
-
-            if (timeDiff > 5 * 60 * 1000) { // 5 minutes expiry
-                localStorage.removeItem("useremail");
-                localStorage.removeItem("email_timestamp");
-                console.log("Email expired and removed from localStorage");
-            }
+        if (NormaluserData.email) {
+            localStorage.setItem("useremail", NormaluserData.email);
         }
-    }, []);
-
-    // Save email on input change
-   
+    }, [NormaluserData.email]);
 
     // Handle form submission
     const submitHandler = async (e) => {
@@ -66,11 +61,6 @@ function Normaluser() {
                 password: NormaluserData.password,
                 role: NormaluserData.role
             });
-
-            if (NormaluserData.email) {
-                localStorage.setItem("useremail", NormaluserData.email);
-                localStorage.setItem("email_timestamp", new Date().getTime());
-            }
 
             if (signupresponse.error) {
                 toast.error(signupresponse.error);
