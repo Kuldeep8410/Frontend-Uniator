@@ -4,31 +4,28 @@ import { useNavigate } from "react-router-dom";
 
 function OtpVerification() {
     const navigate = useNavigate();
-    
+
     const [otp, setOtp] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
 
-    // Load email from localStorage when the component mounts
     useEffect(() => {
         const storedEmail = localStorage.getItem("useremail");
         if (storedEmail) {
             setEmail(storedEmail);
-        } else {
-            toast.warning("Email not found. Please go back to the signup form.");
+            localStorage.removeItem("useremail"); // Removes only the email, not everything
         }
     }, []);
 
     const handleChange = (e) => {
-        const value = e.target.value.replace(/\D/g, "").slice(0, 6); // Only numbers, max 6 digits
-        setOtp(value);
+        const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric input
+        setOtp(value.slice(0, 6)); // Limit to 6 digits
     };
 
     const handleSubmit = async () => {
         if (otp.length !== 6) {
             setMessage("OTP must be 6 digits");
-            toast.warning("OTP must be 6 digits");
             return;
         }
 
@@ -47,26 +44,26 @@ function OtpVerification() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ otp, email }),
+                body: JSON.stringify({ otp, email }), // Send OTP & email
             });
 
             const data = await response.json();
-            console.log("Backend OTP response:", data);
+            // console.log("bakend otp response ",data)
 
             if (response.ok) {
                 setMessage("OTP verified successfully!");
-                toast.success("OTP verified successfully!");
-
-                setTimeout(() => {
-                    navigate('/login');
+                toast.success("OTP verified successfully")
+                setTimeout( () =>{
+                    navigate('/login')
                 }, 1000);
+                
+                
             } else {
                 setMessage(data.message || "OTP verification failed!");
-                toast.error(data.message || "OTP verification failed!");
+                toast.error("OTP verification failed!");
             }
         } catch (error) {
             setMessage("Network error. Please try again.");
-            toast.error("Network error. Please try again.");
         }
 
         setLoading(false);
