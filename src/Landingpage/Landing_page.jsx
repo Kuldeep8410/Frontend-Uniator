@@ -11,6 +11,26 @@ function LandingPage() {
 
     return (
         <div className="relative flex flex-col bg-black content-center justify-center items-center h-auto">
+            <div className="overflow-hidden whitespace-nowrap bg-gray-800 text-cyan-400 py-2">
+                <h1 className="animate-marquee text-lg md:text-xl lg:text-2xl font-semibold">
+                    For a better experience, use on a laptop.
+                </h1>
+            </div>
+
+            <style>
+                {`
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+}
+`}
+            </style>
             <div className="flex flex-col justify-between items-center content-center">
                 <h1 className="text-white antialiased text-3xl md:text-6xl p-10">
                     <span className="text-red-500 font-bold">Welcome !</span> to <span className="text-yellow-400 antialiased font-bold">Uniator</span>
@@ -41,7 +61,7 @@ function LandingPage() {
                     </a>
                 </div>
             </div>
-            
+
             <h1 className="text-white text-5xl mt-20 font-bold antialiased">Feature's At This Application</h1>
             <GridCards />
             <Connects />
