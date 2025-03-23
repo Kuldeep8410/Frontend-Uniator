@@ -48,7 +48,7 @@ function OtpVerification() {
             });
 
             const data = await response.json();
-            // console.log("bakend otp response ",data)
+            console.log("bakend otp response ",data)
 
             if (response.ok) {
                 setMessage("OTP verified successfully!");
