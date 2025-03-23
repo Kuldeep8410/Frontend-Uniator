@@ -18,7 +18,7 @@ function Normaluser() {
     const navigate = useNavigate();
     const googleAuth = useAuth0();
 
-    console.log("google data frontend per ",googleAuth);
+    console.log("google data frontend per ", googleAuth);
 
     const [showpass, SetShowpass] = useState(false)
     const [confshowpass, SetconfShowpass] = useState(false)
@@ -90,9 +90,15 @@ function Normaluser() {
     console.log("your ", IsPassMatch)
 
     return (
-        <div className="">
-            <form className="form " onSubmit={submitHandler}>
-                <label htmlFor="name">Student Name</label>
+        <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
+            <form
+                className="bg-white shadow-md rounded-lg p-6 md:p-8 lg:p-10 w-full max-w-md"
+                onSubmit={submitHandler}
+            >
+                <h2 className="text-xl font-semibold text-center mb-4">Sign Up</h2>
+
+                {/* Name Field */}
+                <label htmlFor="name" className="block text-gray-700 font-medium">Student Name</label>
                 <input
                     type="text"
                     id="name"
@@ -100,9 +106,11 @@ function Normaluser() {
                     value={NormaluserData.username}
                     onChange={changeHandler}
                     required
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
                 />
 
-                <label htmlFor="email">Student Email</label>
+                {/* Email Field */}
+                <label htmlFor="email" className="block text-gray-700 font-medium">Student Email</label>
                 <input
                     type="email"
                     id="email"
@@ -110,65 +118,68 @@ function Normaluser() {
                     value={NormaluserData.email}
                     onChange={changeHandler}
                     required
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
                 />
 
-                <label htmlFor="pass">Password
-                    <input
-                        type={showpass ? ("text") : ("password")}
-                        id="pass"
-                        name="password"
-                        value={NormaluserData.password}
-                        onChange={changeHandler}
-                        required
-                    />
-                    <span onClick={() => { SetShowpass(!showpass) }} className="flex items-center justify-center cursor-pointer">
+                {/* Password Field */}
+                <label htmlFor="pass" className="block text-gray-700 font-medium flex justify-between">
+                    Password
+                    <span onClick={() => SetShowpass(!showpass)} className="cursor-pointer text-blue-600">
                         {showpass ? <FaRegEye /> : <FaEyeSlash />}
                     </span>
                 </label>
+                <input
+                    type={showpass ? "text" : "password"}
+                    id="pass"
+                    name="password"
+                    value={NormaluserData.password}
+                    onChange={changeHandler}
+                    required
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
+                />
 
-                <label htmlFor="con-pass">Confirm Password
-                    <input
-                        type={confshowpass ? ("text") : ("password")}
-                        id="con-pass"
-                        name="confirmpass"
-                        value={NormaluserData.confirmpass}
-                        onChange={changeHandler}
-                        required
-                        style={IsPassMatch ? {} : { borderColor: "red", animation: "shake 0.5s", backgroundColor: "red" }}
-
-                    />
-                    <span onClick={() => { SetconfShowpass(!confshowpass) }} className="flex items-center justify-center cursor-pointer">
+                {/* Confirm Password Field */}
+                <label htmlFor="con-pass" className="block text-gray-700 font-medium flex justify-between">
+                    Confirm Password
+                    <span onClick={() => SetconfShowpass(!confshowpass)} className="cursor-pointer text-blue-600">
                         {confshowpass ? <FaRegEye /> : <FaEyeSlash />}
                     </span>
                 </label>
-
-                
-
-                {/* <label htmlFor="con">Contact</label>
                 <input
-                    type="number"
-                    id="con"
-                    name="contact"
-                    value={NormaluserData.contact}
+                    type={confshowpass ? "text" : "password"}
+                    id="con-pass"
+                    name="confirmpass"
+                    value={NormaluserData.confirmpass}
                     onChange={changeHandler}
-                /> */}
+                    required
+                    className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3 
+                    ${!IsPassMatch && "border-red-500 bg-red-100 animate-shake"}`}
+                />
 
-                <button type="submit">Sign Up</button>
-                <span className="border rounded-md p-2 ml-2 text-red-500">Already Account ?
-                    <NavLink
-                        to="/login"
-                        style={{ color: "aliceblue", border: "2px solid green", padding: "2px", borderRadius: "2px", marginLeft: "4px", background: "green" }}
-                    >
+                {/* Submit Button */}
+                <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md mt-4">
+                    Sign Up
+                </button>
+
+                {/* Already Have an Account? */}
+                <p className="text-center mt-3 text-gray-600">
+                    Already have an account?{" "}
+                    <NavLink to="/login" className="text-green-600 font-semibold hover:underline">
                         Login
                     </NavLink>
-                </span>
+                </p>
 
-                <span className="flex flex-row gap-2 border-2 border-blue-700 rounded-md justify-center items-center content-center p-1 mt-2 text-white hover:bg-amber-800/50 cursor-pointer w-auto">
-                    {<FcGoogle size={30} />} <h2> {<LoginButton />}</h2>
-                </span>
+                {/* Google Signup */}
+                <div className="flex items-center justify-center mt-4">
+                    <span className="flex flex-row gap-2 border-2 border-blue-700 rounded-md px-4 py-2 text-blue-700 hover:bg-blue-700 hover:text-white cursor-pointer">
+                        <FcGoogle size={24} /> <LoginButton />
+                    </span>
+                </div>
             </form>
+
             <ToastContainer />
         </div>
+
     );
 }
 
