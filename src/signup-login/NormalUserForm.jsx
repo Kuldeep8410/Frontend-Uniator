@@ -18,7 +18,7 @@ function Normaluser() {
     const navigate = useNavigate();
     const googleAuth = useAuth0();
 
-    console.log("google data frontend per ", googleAuth);
+    // console.log("google data frontend per ", googleAuth);
 
     const [showpass, SetShowpass] = useState(false)
     const [confshowpass, SetconfShowpass] = useState(false)
@@ -57,7 +57,7 @@ function Normaluser() {
 
     if (NormaluserData && NormaluserData.email) {
         localStorage.setItem("useremail", NormaluserData.email);
-        console.log("New object stored in localStorage:", NormaluserData.email);
+        // console.log("New object stored in localStorage:", NormaluserData.email);
     } else {
         console.log("Error: Email is missing in NormaluserData");
     }

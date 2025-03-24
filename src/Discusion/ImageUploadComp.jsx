@@ -16,7 +16,7 @@ function ImageUpload() {
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setSelectedFile(file);
-        console.log(selectedFile)
+        // console.log(selectedFile)
         setPreview(URL.createObjectUwRL(file));
     };
 
@@ -41,7 +41,7 @@ function ImageUpload() {
 
             const data = await response.json();
             if (data.secure_url) {
-                console.log("Uploaded Image URL:", data.secure_url);
+                // console.log("Uploaded Image URL:", data.secure_url);
                 sendImageUrlToBackend(data.secure_url);
             } else {
                 alert("Upload failed.");
@@ -64,7 +64,7 @@ function ImageUpload() {
             });
 
             const data = await response.json();
-            console.log("Backend Response:", data);
+            // console.log("Backend Response:", data);
             alert("Image URL sent to backend!");
         } catch (error) {
             console.error("Error sending image URL to backend:", error);

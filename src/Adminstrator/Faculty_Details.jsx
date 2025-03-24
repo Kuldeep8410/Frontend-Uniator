@@ -38,7 +38,7 @@ function FacultyDetails({ email, userType, removeUrl, DetailsUrl, heading }) {
 
     const removeUser = async () => {
         try {
-            console.log("Removing user:", data.removeEmail);
+            // console.log("Removing user:", data.removeEmail);
             const response = await AllGetReq(removeUrl, { AdminEmail: email, userEmail: data.removeEmail.trim() });
 
             if (!response) {

@@ -46,7 +46,7 @@ function Posts_Cards(props) {
         setBtnComment(props)
 
         localStorage.setItem("commentBtn", JSON.stringify({ commetnBtn: props }))
-        console.log("Comment submitted:", comment);
+        // console.log("Comment submitted:", comment);
         setComment("");
     }
 

@@ -31,19 +31,19 @@ function TodoHome() {
     const addHandler = () => {
         if (todolist) {
             dispatch(addTask(todolist));
-            console.log("okk", todolist);
+            // console.log("okk", todolist);
             setTodolist({ task: "" });
         } else {
-            console.log("Task cannot be empty");
+            // console.log("Task cannot be empty");
         }
     };
     const removeHandler = (index) => {
         const percentage = percentages[index] || 0;
 
-        console.log("Removing task at index:", index, "with percentage:", percentage);
+        // console.log("Removing task at index:", index, "with percentage:", percentage);
         if (percentage > 0 && percentage <= 100) {
             dispatch(deletetask({ index, percentage }));
-            console.log("Deletion initiated");
+            // console.log("Deletion initiated");
         }
 
 

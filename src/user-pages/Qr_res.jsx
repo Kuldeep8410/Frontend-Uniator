@@ -9,7 +9,7 @@ const Qr_res = () => {
   const {SendDataSignLogin} = useContext(AppContext);
 
   const handleScanSuccess = (result) => {
-    console.log("Scanned data:", result);
+    // console.log("Scanned data:", result);
     setScanResult(result);
     setIsScanning(false); // Auto-stop after successful scan (optional)
   };

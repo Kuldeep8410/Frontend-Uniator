@@ -34,7 +34,7 @@ function SUlogin() {
     const submitHandler = async (e) => {
         e.preventDefault();
         const response = await SendDataSignLogin('adminstrator-login', NormaluserData);
-        console.log("login form send succes", response);
+        // console.log("login form send succes", response);
 
 
         localStorage.setItem("UserData", JSON.stringify(response));
@@ -43,7 +43,7 @@ function SUlogin() {
             toast.error(response.message);
         }
         else if (response.success && response.data.role === "Administrator") {
-            console.log("helloooo")
+            // console.log("helloooo")
             toast.success(response.message)
             setTimeout(() => {
                 navigate("/administrator");

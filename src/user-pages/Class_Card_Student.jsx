@@ -24,7 +24,7 @@ function Class_Card_Component({ course, x }) {
 
         try {
             const response = await SendDataSignLogin("attendance-marking", newObj);
-            console.log("Updated course response:", response);
+            // console.log("Updated course response:", response);
             setPopUp(response.success);
 
             if (response.success) toast.success(response.message);
@@ -40,7 +40,7 @@ function Class_Card_Component({ course, x }) {
         }
     }
 
-    console.log("out side ", total_class, AttendByYou);
+    // console.log("out side ", total_class, AttendByYou);
     const percentage = parseInt((AttendByYou / total_class) * 100);
 
 

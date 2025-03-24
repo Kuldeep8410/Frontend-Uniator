@@ -22,7 +22,7 @@ function DeleteCourse({ props }) {
             });
 
             if (!response.ok) {
-                console.log("response",response)
+                // console.log("response",response)
                 return response
             }
 

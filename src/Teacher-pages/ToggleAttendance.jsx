@@ -10,7 +10,7 @@ async function updateCourse(courseId, updatedData) {
 
         const data = await response.json();
         if (data.success) {
-            console.log("Course updated:", data);
+            // console.log("Course updated:", data);
         } else {
             console.error("Failed to update course:", data.message);
         }

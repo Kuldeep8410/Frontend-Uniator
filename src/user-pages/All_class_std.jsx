@@ -35,7 +35,7 @@ function All_Class_Std({ x }) {
                 if (!response) {
                     console.log("No data received.");
                 } else {
-                    console.log("All courses:", response.message);
+                    // console.log("All courses:", response.message);
                     setClassData(response.data); // Store data in state
                 }
             } catch (error) {

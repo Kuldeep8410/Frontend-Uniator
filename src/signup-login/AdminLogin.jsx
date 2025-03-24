@@ -30,9 +30,9 @@ function AdminLogin() {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        console.log("NormaluserData")
+        // console.log("NormaluserData")
         const response = await SendDataSignLogin('admin-login', NormaluserData);
-        console.log("login response for frtend ", response);
+        // console.log("login response for frtend ", response);
 
 
         localStorage.setItem("UserData", JSON.stringify(response));

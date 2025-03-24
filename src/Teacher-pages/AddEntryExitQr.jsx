@@ -18,14 +18,14 @@ function AddEntryExitQr() { //  Don't use async here! may cause infinite render
     }
 
     async function onSubmit() {
-        console.log("Your QR Data:", qrData);
+        // console.log("Your QR Data:", qrData);
 
         const userData = localStorage.getItem("UserData");
         const AdminInfo = userData ? JSON.parse(userData) : "null";
 
         if(!AdminInfo.data.role === "" && AdminInfo.data.email){
-              toast.error("your not Admin Broo!!");
-              console.log("error your not admin");
+              toast.error("you are not Admin Broo!!");
+              console.log("error you are not admin");
               return ;
         }
         const AdminEmail =  AdminInfo.data.email

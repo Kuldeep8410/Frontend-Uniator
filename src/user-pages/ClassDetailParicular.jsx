@@ -30,7 +30,7 @@ const ClassDetailParticular = () => {
                 total_class: response.totalClass,
                 AttendByYou: response.attendendClass
             });
-            console.log("hello ji res",response)
+            // console.log("hello ji res",response)
             
         } catch (error) {
             console.error("Error fetching attendance details:", error);
@@ -41,7 +41,7 @@ const ClassDetailParticular = () => {
     useEffect(() => {
         ShowAttendanceDetail();
     }, [courseCode]); // Re-fetch if courseCode changes
-    console.log("hello ji",attendance)
+    // console.log("hello ji",attendance)
 
     let { total_class, AttendByYou } = attendance;
     const percentage = total_class ? ((AttendByYou / total_class) * 100).toFixed(2) : 0;

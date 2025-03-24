@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import Qr_image from '../../public/Qr Scan.png'
 
 function Middle_upper({ props, color }) {
-    console.log("color you get new", color)
+    // console.log("color you get new", color)
 
 
     return (

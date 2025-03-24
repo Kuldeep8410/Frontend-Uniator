@@ -5,14 +5,14 @@ import DeleteCourse from "./Delete_Class";
 
 function ClassComponent({ course }) {
     const {PutRequets} = useContext(AppContext);
-    console.log("porops aya kya ", course._id)
+    // console.log("porops aya kya ", course._id)
 
     if (!course.isActive) {
-        console.log("hello ji")
+        // console.log("hello ji")
     }
 
     async function AttendanceHandler() {
-        console.log("Teacher for this course:", course);
+        // console.log("Teacher for this course:", course);
         
         const newObj = {
             isActive: !course.isActive
@@ -20,7 +20,7 @@ function ClassComponent({ course }) {
         
         try {
             const response = await PutRequets(course._id, newObj, "toggleattendance");
-            console.log("Updated course response:", response);
+            // console.log("Updated course response:", response);
         } catch (error) {
             console.error("Error updating attendance:", error);
         }

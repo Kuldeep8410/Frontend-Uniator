@@ -51,8 +51,8 @@ function Adminuser() {
     }
     if (!response.success) toast.error(response.message)
 
-    console.log("response for admin: ", response);
-    console.log("Your form data saved successfully", NormaluserData);
+    // console.log("response for admin: ", response);
+    // console.log("Your form data saved successfully", NormaluserData);
   };
 
 

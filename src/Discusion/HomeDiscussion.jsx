@@ -20,7 +20,7 @@ function HomeDiscussion (){
     function clickHandler (params) {
         setParams(params);
         localStorage.setItem("buttonClickType", JSON.stringify({BtnName : isparams}))
-        console.log("params ",isparams)
+        // console.log("params ",isparams)
     }
 
 

@@ -23,13 +23,13 @@ function All_Class_adm() {
 
             try {
                 const response = await AllGetReq("get-all-class-adm", { email: AdminInfo.email, role: AdminInfo.role });
-                console.log(response);
+                // console.log(response);
 
 
                 if (!response) {
-                    console.log("No data received.");
+                    // console.log("No data received.");
                 } else {
-                    console.log("All courses:", response.message);
+                    // console.log("All courses:", response.message);
                     setClassData(response.data); // Store data in state
                 }
             } catch (error) {

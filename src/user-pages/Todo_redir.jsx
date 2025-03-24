@@ -7,7 +7,7 @@ function Todo_Page() {
     const completeTask = useSelector(state => state.todo.completedTasks)
 
     const total = incompleteTask.length + completeTask.length;
-    console.log("total", total)
+    // console.log("total", total)
 
     const percentage = (completeTask / (incompleteTask + completeTask)) * 100;
 

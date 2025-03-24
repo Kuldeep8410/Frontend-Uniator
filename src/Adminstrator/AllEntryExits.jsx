@@ -6,7 +6,7 @@ function EntriesLog() {
 
     const [email, setEmail] = useState({ email: "" });
     const [queryData, setQueryData] = useState(null);
-    console.log("user enail 1 ", email)
+    // console.log("user enail 1 ", email)
 
     function changeHandler(event) {
         const { name, value } = event.target;
@@ -18,7 +18,7 @@ function EntriesLog() {
 
     const clickHandler = async (params) => {
         try {
-            console.log("user enail ", params)
+            // console.log("user enail ", params)
             const response = await AllGetReq(`all-entries-of-user?${params}`, {});
 
             if (response) {

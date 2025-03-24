@@ -35,7 +35,7 @@ function Login() {
     const submitHandler = async (e) => {
         e.preventDefault();
         const response = await SendDataSignLogin('login', NormaluserData);
-        console.log("login form send succes", response);
+        // console.log("login form send succes", response);
 
         //local storage mein save kr rha hu
 

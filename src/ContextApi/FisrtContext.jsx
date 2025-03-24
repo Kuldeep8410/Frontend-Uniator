@@ -13,7 +13,7 @@ export default function AppContextProvider({ children }) {
         setLoading(true);
 
         const URL = `${BASE_URL}/${Api_url}`;
-        console.log("requestes", URL);
+        // console.log("requestes", URL);
 
         try {
             const result = await fetch(URL, {
@@ -24,7 +24,7 @@ export default function AppContextProvider({ children }) {
             });
 
             const fetchResponse = await result.json(); // Await the response JSON
-            console.log("Response from backend:", fetchResponse); // Log to check data
+            // console.log("Response from backend:", fetchResponse); // Log to check data
             return fetchResponse;
         } catch (error) {
             console.error("Error in fetching:", error);
@@ -38,7 +38,7 @@ export default function AppContextProvider({ children }) {
             const queryString = new URLSearchParams(queryParams).toString();
             const newUrl = `${BASE_URL_GET}/${Api_url}${queryString ? `?${queryString}` : ""}`;
     
-            console.log("GET URL:", newUrl);
+            // console.log("GET URL:", newUrl);
     
             const result = await fetch(newUrl, {
                 method: "GET",

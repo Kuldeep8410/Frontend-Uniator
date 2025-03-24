@@ -11,12 +11,12 @@ function QrvarificationG1g2({ Qrvalue }) {
 
         const userDetails = localStorage.getItem("UserData");
         const email = userDetails ? JSON.parse(userDetails).email : "null";
-        console.log("QR Value: ", Qrvalue);
+        // console.log("QR Value: ", Qrvalue);
 
         try {
             const varificationRes = await AllGetReq("qrvarification-of-user", { qrvalue: Qrvalue, email });
             setResponse(varificationRes);
-            console.log("QR Verification Details: ", varificationRes);
+            // console.log("QR Verification Details: ", varificationRes);
         } catch (error) {
             console.log("Error in verifying QR: ", error);
         }

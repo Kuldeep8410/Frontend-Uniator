@@ -30,14 +30,14 @@ function Create_class() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted Course Data:", courseData);
+    // console.log("Submitted Course Data:", courseData);
 
     try {
       // Check Faculty Department Before Submission
       const FacultyInfo = localStorage.getItem("UserData");
       const FacultyDep = FacultyInfo ? JSON.parse(FacultyInfo).Department : null;
 
-      console.log("fac dep",FacultyDep)
+      // console.log("fac dep",FacultyDep)
 
       if (FacultyDep !== courseData.Department) {
         setDepartment(false)
@@ -47,7 +47,7 @@ function Create_class() {
 
       const response = await SendDataSignLogin("ClassCreate", courseData);
       setRes(response);
-      console.log("Server Response:", response);
+      // console.log("Server Response:", response);
 
       if (response.success) {
         toast.success(response.message);

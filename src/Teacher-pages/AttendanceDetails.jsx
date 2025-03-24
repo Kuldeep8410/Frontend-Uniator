@@ -33,7 +33,7 @@ function Attendance() {
                 return;
             }
 
-            console.log("Fetching attendance for Course:", CourseCode);
+            // console.log("Fetching attendance for Course:", CourseCode);
             const response = await AllGetReq("get-attendace-all-course", { courseCode: CourseCode });
 
             if (!response || !response.success) {
@@ -60,7 +60,7 @@ function Attendance() {
                 return;
             }
 
-            console.log("Fetching student attendance for:", { CourseCode, studentEmail });
+            // console.log("Fetching student attendance for:", { CourseCode, studentEmail });
             const response = await AllGetReq("get-student-attendance-by-entry", {
                 courseCode: CourseCode,
                 studentEmail: studentEmail

@@ -16,7 +16,7 @@ import Linked from '../assets/InkedIn.png';
 import Insta from '../assets/Instagram.jpeg';
 
 function UserHome() {
-    console.log("user auth home per hai")
+    // console.log("user auth home per hai")
     const { SendDataSignLogin } = useContext(AppContext);
     const G_user = localStorage.getItem("userGdata");
 
@@ -60,8 +60,8 @@ function UserHome() {
 
                 try {
                     const G_user_res = SendDataSignLogin("google-login-data", userUpdatedData);
-                    console.log("Response from backend:", G_user_res);
-                    console.log("Updated user data:", userUpdatedData);
+                    // console.log("Response from backend:", G_user_res);
+                    // console.log("Updated user data:", userUpdatedData);
                 } catch (error) {
                     console.error("Error sending user data:", error);
                 }

@@ -17,7 +17,7 @@ function AddEntryExitQr() { //  Don't use async here! may cause infinite render
     }
 
     async function onSubmit() {
-        console.log("Your QR Data:", qrData);
+        // console.log("Your QR Data:", qrData);
 
         const userData = localStorage.getItem("UserData");
         const AdminEmail = userData ? JSON.parse(userData).email : "null";
@@ -28,7 +28,7 @@ function AddEntryExitQr() { //  Don't use async here! may cause infinite render
             AdminEmail: AdminEmail
         };
 
-        console.log("Admin Email:", AdminEmail);
+        // console.log("Admin Email:", AdminEmail);
 
         try {
             const response = await fetch(`${BASE_URL}/put/addordetails`, {
@@ -41,7 +41,7 @@ function AddEntryExitQr() { //  Don't use async here! may cause infinite render
 
             const data = await response.json();
             if (data.success) {
-                console.log("QR Data updated:", data);
+                // console.log("QR Data updated:", data);
             } else {
                 console.error("Failed to update QR data:", data.message);
             }

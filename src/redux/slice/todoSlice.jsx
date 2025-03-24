@@ -13,7 +13,7 @@ const initialState = {
 export const fetchTasks = createAsyncThunk("todo/fetchTasks", async (API_URL) => {
     const response = await fetch(API_URL); 
     const data = await response.json();
-    console.log("data from backend is here ",data)
+    // console.log("data from backend is here ",data)
     return data;  // Thunks automatically use returned data to update the state
 });
 
@@ -36,7 +36,7 @@ const todoSlice = createSlice({
         // Local state update for adding task
         addTask: (state, action) => {
             const newTask = action.payload;
-            console.log("new task in redux", newTask)
+            // console.log("new task in redux", newTask)
             state.tasks.push(newTask);
         },
         deletetask: (state, action) => {
