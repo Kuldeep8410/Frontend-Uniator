@@ -11,12 +11,13 @@ export default function StatsSection() {
           </div>
   
           {/* Stats Card */}
-          <div className="relative bg-gray-900/80 backdrop-blur-md rounded-2xl p-8 flex justify-between items-center shadow-lg">
-            <StatItem value="40B" label="Redis Commands" />
-            <StatItem value="90M" label="QStash Messages" />
-            <StatItem value="8M" label="Vector Queries" />
-            <StatItem value=">99.99%" label="Uptime" />
-          </div>
+          <div className="relative bg-gray-900/80 backdrop-blur-md rounded-2xl p-8 flex flex-wrap md:flex-nowrap justify-around items-center shadow-lg gap-4 text-center">
+          <StatItem value="40B" label="Redis Commands" />
+          <StatItem value="90M" label="QStash Messages" />
+          <StatItem value="8M" label="Vector Queries" />
+          <StatItem value=">99.99%" label="Uptime" />
+        </div>
+
   
           <p className="text-sm text-gray-400 text-center mt-4">* weekly average</p>
         </div>
@@ -26,9 +27,9 @@ export default function StatsSection() {
   
   function StatItem({ value, label }) {
     return (
-      <div className="text-center">
-        <p className="text-3xl font-bold text-green-400">{value}</p>
-        <p className="text-gray-300">{label}</p>
+      <div className="flex flex-col items-center">
+      <span className="text-3xl font-bold text-green-400">{value}</span>
+      <span className="text-lg mt-0.5 ml-2">{label}</span>
       </div>
     );
   }
