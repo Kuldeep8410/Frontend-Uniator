@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')).render(
     domain="dev-mamx0jwd07mabiow.us.auth0.com"
     clientId="iVUR71WZOkroC5WVFJGecIp92P4OU6u6"
     authorizationParams={{
-      redirect_uri: "http://localhost:5173/user-home", // Change this to your desired redirect URL
+      redirect_uri: "https://frontend-uniator.vercel.app/", // Change this to your desired redirect URL
     }}
   >
     <AppContextProvider>
