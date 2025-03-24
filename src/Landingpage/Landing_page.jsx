@@ -11,7 +11,7 @@ function LandingPage() {
 
     return (
         <div className="relative flex flex-col bg-black content-center justify-center items-center h-auto">
-            <div className="overflow-hidden whitespace-nowrap bg-gray-800 text-cyan-400 py-2">
+            <div className="overflow-hidden whitespace-nowrap text-cyan-400 py-2">
                 <h1 className="animate-marquee text-lg md:text-xl lg:text-2xl font-semibold">
                     For a better experience, use on a laptop.
                 </h1>
