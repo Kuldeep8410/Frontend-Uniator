@@ -108,20 +108,17 @@ function UserHome() {
     const AvailableClasses = {
         url: "/all-classes",
         head: "All Available",
-        para: "Here is All Classes that are held",
         name: "Go To All"
     }
     const attendance = {
         url: "/all-classes-student",
-        head: "Mark Your Attendance",
-        para: "now you can mark your attendance subject wise",
+        head: "Mark Attendance",
         name: "Mark Attendance"
     }
 
     const QRComponent = {
         url: "/qrscanner",
         head: "G1/G2 Entries",
-        para: "scan Qr for making entries from university gate",
         name: "Scan Qr"
     }
 
@@ -130,59 +127,62 @@ function UserHome() {
     return (
         <div className="flex flex-col">
 
-<div className="flex flex-col relative bg-black items-center justify-center md:p-10 p-5 text-white">
-    <h1 className="text-3xl font-bold text-center">
-        <span className="text-blue-500">Hello!</span>
-        <span className="text-gray-300"> Student</span>
-        How's Your Class Going?
-    </h1>
-    <h1 className="text-2xl font-bold text-center mt-2">
-        Your <span className="text-blue-500">Ultimate</span> Utility Hub!
-    </h1>
-    <div className="flex items-center justify-center md:w-3/4 w-full">
-        <p className="text-gray-400 text-center md:text-left p-5">
-            Welcome to <span className="text-blue-400">Uniator</span>, a versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, and more. An all-in-one solution for students and organizations.
-        </p>
-    </div>
-</div>
+            <div className="flex flex-col relative bg-black items-center justify-center md:p-5 p-10 text-white">
+                <h1 className=" text-3xl text-white font-bold"> <span className="text-3xl text-red-500 font-bold">Hello !</span>
+                    <span className="text-3xl text-yellow-300 font-bold"> Student </span>
+                    How's Your class going</h1>
+                <br></br>
+                <h1 className="text-2xl text-white font-bold">
+                    Your <span className="text-2xl text-red-500 font-bold">Ultimate</span> Utilty Hub!
+                </h1>
+                <div className="flex items-center md:ml-50 md:mr-50">
+                    <p className="text-gray-400 p-10 items-center">Welcome to <span className="text-2xl text-yellow-300">Uniator</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. making it an all-in-one students, and organizations.</p>
+                </div>
+            </div>
 
-<div className="main flex flex-col md:flex-row bg-black min-h-screen gap-4 p-2">
-    {/* Left Sidebar */}
-    <div className="left-div flex flex-col bg-white/10 border-2 p-4 rounded-2xl md:w-1/5 w-3/4 md:h-screen">
-        <UserProfile props={userInfo} />
-        <LeftDivComp props={leftEditor} />
-        <LeftDivComp props={userInfo} />
-        <LeftDivComp props={logout} />
-    </div>
 
-    {/* Middle Section */}
-    <div className="middle-div flex flex-col items-center bg-white/10 md:h-screen md:w-3/5 w-3/4 p-4 rounded-2xl gap-4">
-        {/* Upper Section */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:h-[200px] w-full">
-            <Middle_upper props={QRComponent} color="#13180f" />
-            <Middle_upper props={attendance} color="#13180f" />
-            <Middle_upper props={AvailableClasses} color="#13180f" />
-        </div>
 
-        {/* Middle Section */}
-        <div className="flex justify-center items-center gap-4 md:h-[200px] w-3/4">
-            <MiddlemiddleComp />
-            <MiddlemiddleComp />
-        </div>
+            <div className="main flex flex-col md:flex-row bg-black relative min-h-screen gap-2 p-4">
 
-        {/* Bottom Section */}
-        <div className="flex justify-center bg-black text-white rounded-2xl h-1/4 w-full">
-            <h1>Your Recent Activities</h1>
-        </div>
-    </div>
+                {/* Left Sidebar */}
+                <div className="left-div flex flex-col w-full md:w-1/5 bg-white/15 border-2 pl-1 pr-4 pt-5 rounded-2xl relative gap-5 md:h-screen">
+                    <UserProfile props={userInfo} />
+                    <LeftDivComp props={leftEditor} />
+                    <LeftDivComp props={userInfo} />
+                    <LeftDivComp props={logout} />
+                </div>
 
-    {/* Right Sidebar */}
-    <div className="right-div bg-white/10 p-4 rounded-2xl md:w-1/5 w-3/4 md:h-screen">
-        <Todo_Page />
-        <CommunityForum />
-        <RightDivComp props={userInfo} />
-    </div>
-</div>
+                {/* Middle Section */}
+                <div className="middle-div flex flex-col items-center justify-center bg-white/10 w-full md:w-3/5 p-2 rounded-2xl relative gap-4">
+
+                    {/* Upper Section */}
+                    <div className="middle flex flex-col md:flex-row justify-center border-0 rounded-2xl  text-white mt-2 mb-2 relative w-full md:h-[200px] gap-4">
+                        <Middle_upper props={QRComponent} color={"#13180f"} />
+                        <Middle_upper props={attendance} color={"#13180f"} />
+                        <Middle_upper props={AvailableClasses} color={"#13180f"} />
+                    </div>
+
+                    {/* Middle Section */}
+                    <div className="middle flex justify-center rounded-2xl text-white relative h-1/1 w-full md:h-[200px] md:gap-5">
+                        <MiddlemiddleComp />
+                        <MiddlemiddleComp />
+                    </div>
+
+                    {/* Bottom Section */}
+                    <div className="middle flex justify-center border-0 rounded-2xl border-b-emerald-600 bg-white/10 text-white mt-2 mb-2 relative h-1/4 w-full p-4">
+                        <h1>Your Recent Activities</h1>
+                    </div>
+                </div>
+
+                {/* Right Sidebar */}
+                <div className="right-div bg-white/10 w-full md:w-1/5 p-4 rounded-2xl relative md:h-screen">
+                    <Todo_Page />
+                    <CommunityForum />
+                    <RightDivComp props={userInfo} />
+                </div>
+
+            </div>
+
 
 
 
