@@ -13,7 +13,7 @@ function AdminPro() {
             </div>
             <div className="flex flex-col mt-7 text-white font-bold">
                 <h1>{AdminInfo.name}</h1>
-                <h1 className="overflow-hidden">{AdminInfo.email}</h1>
+                <h1 className="overflow-hidden text-sm">{AdminInfo.email}</h1>
             </div>
         </div>
     )
