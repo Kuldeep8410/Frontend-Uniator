@@ -11,9 +11,9 @@ function AdminPro() {
             <div className="m-2 text-6xl p-2 font-bold border-2 border-blue-500 rounded-full bg-gradient-to-tl from-red-400 to-blue-600 bg-clip-text text-transparent">
               {AdminInfo.name[0]}
             </div>
-            <div className="flex flex-col mt-7 text-white font-bold">
+            <div className="flex flex-col mt-7 text-white font-bold text-sm">
                 <h1>{AdminInfo.name}</h1>
-                <h1 className="overflow-hidden text-sm">{AdminInfo.email}</h1>
+                <h1 className="overflow-hidden ">{AdminInfo.email}</h1>
             </div>
         </div>
     )
