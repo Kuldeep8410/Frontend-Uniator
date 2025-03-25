@@ -91,10 +91,10 @@ function Adminuser() {
             />
 
             {/* Faculty Dropdown */}
-            <label htmlFor="facultyof" className="mt-4 text-gray-300">Faculty Of</label>
+            <label htmlFor="FuckltyOf" className="mt-4 text-gray-300">Faculty Of</label>
             <select
-                id="facultyof"
-                name="FacultyOf"
+                id="FuckltyOf"
+                name="FuckltyOf"
                 value={NormaluserData.FuckltyOf}
                 onChange={changeHandler}
                 className="w-full px-4 py-2 mt-1 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
