@@ -8,17 +8,9 @@ import Loader from "../UiComponents/Loader";
 
 
 function LandingPage() {
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-      setTimeout(() => {
-        setLoading(false); 
-      }, 2000);
-    }, []);
+    
 
     return (
-       <div>
-        {loading ? (<Loader />):(
              <div className="relative flex flex-col bg-black content-center justify-center items-center h-auto">
              <div className="overflow-hidden whitespace-nowrap text-cyan-400 py-2">
                  <h1 className="animate-marquee text-lg md:text-xl lg:text-2xl font-semibold">
@@ -81,8 +73,6 @@ function LandingPage() {
              <Signup />
              <StatsSection />
          </div>
-        )}
-       </div>
     )
 }
 
