@@ -42,6 +42,7 @@ import ClassCreate from './Documention/ClassCreate'
 import Attendance from "./Documention/AttendanceMarking"
 import GatePassWorking from "./Documention/GatePassWorking"
 import AttendanceMarking from "./Documention/AttendanceMarking";
+import Loader2 from "./Loader";
 
 
 
