@@ -3,6 +3,7 @@ import GridCards from "../Landingpage/GridLayout";
 import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../ContextApi/FisrtContext";
 import { ToastContainer, toast } from "react-toastify";
+import Loader from "../UiComponents/Loader";
 
 const ClassDetailParticular = () => {
     const { courseCode, courseName, Teacher } = useParams();
@@ -73,35 +74,37 @@ const ClassDetailParticular = () => {
             </div>
 
             {/* Grid Section */}
-            <div className="px-6 py-10 flex justify-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
-                    {/* Attendance Info */}
-                    <div className="flex flex-col items-center justify-center p-6 border rounded-2xl bg-white/10 shadow-lg">
-                        <h1 className="text-xl font-bold mb-2">📅 Attendance Info</h1>
-                        <p className="text-lg">
-                            Total Classes: <span className="font-semibold text-green-500">{total_class}</span>
-                        </p>
-                        <p className="text-lg">
-                            Attended Classes: <span className="font-semibold text-red-500">{AttendByYou}</span>
-                        </p>
-                        <p className="text-lg">
-                            Percentage: <span className="font-semibold text-yellow-400">{percentage}%</span>
-                        </p>
-                        <button className="text-black p-2 font-bold bg-green-500 rounded-xl w-2/5">Refresh</button>
-                    </div>
-                    <div className="p-6 border rounded-2xl bg-white/10 shadow-lg flex flex-col items-center justify-center">
-                        <h1 className="text-xl font-bold">📜 Details View</h1>
-                        <p className="text-sm text-gray-300">Click to expand course details</p>
-                    </div>
+           {loading ? (<Loader) : (
+             <div className="px-6 py-10 flex justify-center">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
+                 {/* Attendance Info */}
+                 <div className="flex flex-col items-center justify-center p-6 border rounded-2xl bg-white/10 shadow-lg">
+                     <h1 className="text-xl font-bold mb-2">📅 Attendance Info</h1>
+                     <p className="text-lg">
+                         Total Classes: <span className="font-semibold text-green-500">{total_class}</span>
+                     </p>
+                     <p className="text-lg">
+                         Attended Classes: <span className="font-semibold text-red-500">{AttendByYou}</span>
+                     </p>
+                    <p className="text-lg">
+                         Percentage: <span className="font-semibold text-yellow-400">{percentage}%</span>
+                     </p>
+                     <button className="text-black p-2 font-bold bg-green-500 rounded-xl w-2/5">Refresh</button>
+                 </div>
+                 <div className="p-6 border rounded-2xl bg-white/10 shadow-lg flex flex-col items-center justify-center">
+                     <h1 className="text-xl font-bold">📜 Details View</h1>
+                     <p className="text-sm text-gray-300">Click to expand course details</p>
+                 </div>
 
-                    {/* Notices & Class Info */}
-                    <div className="p-6 border rounded-2xl bg-white/10 shadow-lg flex flex-col items-center justify-center">
-                        <h1 className="text-xl font-bold">📢 Notices & Class Info</h1>
-                        <p className="text-sm text-gray-300">Stay updated with announcements</p>
-                    </div>
-                </div>
+                 {/* Notices & Class Info */}
+                 <div className="p-6 border rounded-2xl bg-white/10 shadow-lg flex flex-col items-center justify-center">
+                     <h1 className="text-xl font-bold">📢 Notices & Class Info</h1>
+                     <p className="text-sm text-gray-300">Stay updated with announcements</p>
+                 </div>
+             </div>
 
-            </div>
+         </div> 
+           )}
 
             {/* Additional Content */}
             <GridCards />

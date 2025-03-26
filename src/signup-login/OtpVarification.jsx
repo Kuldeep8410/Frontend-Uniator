@@ -71,6 +71,7 @@ function OtpVerification() {
 
     return (
         <div className="flex flex-col items-center mt-20 bg-blue-500/90 p-6 rounded-lg">
+
             <p className="text-white mb-2">Email: {email || "No email provided"}</p>
             <input
                 type="text"
@@ -91,6 +92,7 @@ function OtpVerification() {
                 {loading ? "Verifying..." : "Submit"}
             </button>
             {message && <p className="mt-2 text-white">{message}</p>}
+
             <ToastContainer />
         </div>
     );

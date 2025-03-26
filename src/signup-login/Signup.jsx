@@ -4,7 +4,7 @@ import Normaluser from "./NormalUserForm";
 import Adminuser from "./AdminSignup";
 
 import { AppContext } from "../ContextApi/FisrtContext";
-import HashLoader from "react-spinners/HashLoader";
+import Loader from "../UiComponents/Loader";
 
 function Signup() {
 
@@ -21,7 +21,7 @@ function Signup() {
   return (
     <div className="flex justify-center w-full p-4 relative">
       {loading ? (
-        <HashLoader />
+        <Loader />
       ) : (
         <div className="relative flex flex-col rounded-2xl justify-center items-center p-4 m-3 w-1/1 md:w-2/7 border-2 bg-black text-blue-50 gap-4">
           {/* Buttons with active state styling */}

@@ -3,7 +3,7 @@ import { AppContext } from "../ContextApi/FisrtContext";
 import { ToastContainer, toast } from 'react-toastify';
 
 function Create_class() {
-  const { SendDataSignLogin } = useContext(AppContext);
+  const { loading, SendDataSignLogin } = useContext(AppContext);
   const [res, setRes] = useState(null);
   const [isDepartment, setDepartment] = useState(true)
   const [courseData, setCourseData] = useState({
@@ -183,7 +183,7 @@ function Create_class() {
           type="submit"
           className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
         >
-          Create A Class
+          {loading ? ("Creating ......") : ("Create A Class")}
         </button>
       </form>
 

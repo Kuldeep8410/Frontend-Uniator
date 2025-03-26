@@ -11,6 +11,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 import LoginButton from "../Google Auth/Login";
 import { useAuth0 } from "@auth0/auth0-react";
+import Loader from "../UiComponents/Loader";
 
 
 
@@ -91,6 +92,7 @@ function Normaluser() {
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-black px-4">
+       {loading ? (<Loader />) : 
         <form
             className="bg-green-950 shadow-md rounded-lg p-6 md:p-8 lg:p-10 w-full max-w-md"
             onSubmit={submitHandler}
@@ -176,7 +178,7 @@ function Normaluser() {
                 </span>
             </div>
         </form>
-
+  }
         <ToastContainer />
     </div>
 
