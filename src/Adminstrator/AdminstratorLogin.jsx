@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Navigate, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../Google Auth/Login";
+import Loader from "../UiComponents/Loader";
 
 
 function SUlogin() {
@@ -53,7 +54,8 @@ function SUlogin() {
     };
     return (
         <div className="flex justify-center h-screen items-center content-center align-bottom">
-            <div>
+            {loading ? (<Loader />) : (
+                <div>
                 <form className="form " onSubmit={submitHandler}>
                     <h1 className="text-2xl text-cyan-500 border-b-2">Super User Login</h1>
             
@@ -91,6 +93,7 @@ function SUlogin() {
                     </div>
                 </form>
             </div>
+            )}
             <ToastContainer />
         </div>
     );

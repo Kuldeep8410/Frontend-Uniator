@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { AppContext } from "../ContextApi/FisrtContext";
 
 function EntriesLog() {
-    const { AllGetReq } = useContext(AppContext);
+    const { loading, AllGetReq } = useContext(AppContext);
 
     const [email, setEmail] = useState({ email: "" });
     const [queryData, setQueryData] = useState(null);
@@ -37,7 +37,7 @@ function EntriesLog() {
                         onClick={clickHandler}
                         className="bg-yellow-400 rounded p-2"
                     >
-                        All Log Entries
+                        {loading ?("Loading Entries....."): ("All Log Entries")}
                     </button>
                 </div>
                 <div className="flex gap-2">
@@ -58,7 +58,7 @@ function EntriesLog() {
                         }}
                         className="bg-yellow-400 rounded p-2"
                     >
-                        Search By Email
+                        {loading? ("Searching...."): ("Search By Email")}
                     </button>
                 </div>
             </div>
