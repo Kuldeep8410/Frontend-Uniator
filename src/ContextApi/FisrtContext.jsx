@@ -35,6 +35,7 @@ export default function AppContextProvider({ children }) {
     }
     async function AllGetReq(Api_url, queryParams = {}) {
         try {
+            setLoading(true)
             const queryString = new URLSearchParams(queryParams).toString();
             const newUrl = `${BASE_URL_GET}/${Api_url}${queryString ? `?${queryString}` : ""}`;
     
@@ -59,6 +60,9 @@ export default function AppContextProvider({ children }) {
         } catch (error) {
             console.error("Error in AllGetReq:", error);
             return { success: false, message: "Error fetching data" };
+        }
+        finally{
+            setLoading(false);
         }
     }
     
