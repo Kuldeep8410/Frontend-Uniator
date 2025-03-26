@@ -74,10 +74,17 @@ function Normaluser() {
             if (signupresponse.error) {
                 toast.error(signupresponse.error)
             }
-            else {
+            else if(signupresponse.success) {
                 toast.success(signupresponse.message)
                 setTimeout(() => {
                     navigate("/otpvarification");
+                }, 1000);
+            }
+            else if(signupresponse.message === "User already exists, please login")
+            {
+                toast.warn(signupresponse.message)
+                setTimeout(() => {
+                    navigate("/login");
                 }, 1000);
             }
         }
