@@ -12,9 +12,9 @@ const Navbar = () => {
   let data = localData ? JSON.parse(localData) : {}; // Ensure `data` is an object
   
   // Ensure `data.success` is always a boolean
-  if (typeof data.success !== "boolean") {
-    data.success = false;
-  }
+  // if (typeof data.success !== "boolean") {
+  //   data.success = false;
+  // }
 
   return (
     <nav className="sticky top-0 z-10 bg-black backdrop-blur-lg text-black font-medium">
