@@ -10,6 +10,9 @@ const Navbar = () => {
 
   const localData = localStorage.getItem("userData");
   let data = localData ? JSON.parse(localData) : {}; // Ensure `data` is an object
+
+  console.log("data sucess",data.success)
+  console.log("type",typeof(data.success))
   
   // Ensure `data.success` is always a boolean
   // if (typeof data.success !== "boolean") {
