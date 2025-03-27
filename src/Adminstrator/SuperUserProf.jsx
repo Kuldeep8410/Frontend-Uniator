@@ -13,7 +13,7 @@ function SUProf() {
             </div>
             <div className="flex flex-col mt-7 text-white font-bold">
                 <h1>{AdminstratorInfo.data.role}</h1>
-                <h1>{AdminstratorInfo.data.email}</h1>
+                <h1 className="size-sm overflow-hidden">{AdminstratorInfo.data.email}</h1>
             </div>
         </div>
     )
