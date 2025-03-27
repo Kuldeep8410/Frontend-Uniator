@@ -34,7 +34,7 @@ const Navbar = () => {
             <NavLink to="/user-home" className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400">User-Access</NavLink>
 
 
-            <NavLink to="/login" className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400">{data.success|| isAuthenticated ? <LogoutButton /> : "Login"}</NavLink>
+            <NavLink to="/login" className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400">{data.success|| isAuthenticated ? <Logout /> : "Login"}</NavLink>
 
 
             <NavLink to="/Contact" className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400">Contact</NavLink>
