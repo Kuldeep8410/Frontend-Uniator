@@ -12,7 +12,7 @@ function CommunityForum() {
                 <h1 className="text-sm ml-[100px]">Like: 100</h1>
             </div>
             
-            <a href="/todo-home" className="w-3/5 border-2 m-2 p-1 rounded-2xl bg-blue-800">Make Your Disscusion</a>
+            <a href="/discussion" className="w-3/5 border-2 m-2 p-1 rounded-2xl bg-blue-800">Make Your Disscusion</a>
 
 
 

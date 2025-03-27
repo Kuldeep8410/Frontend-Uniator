@@ -107,7 +107,7 @@ function UserHome() {
 
     const AvailableClasses = {
         url: "/all-classes",
-        head: "All Available",
+        head: "All Classess",
         name: "Go To All"
     }
     const attendance = {
@@ -194,31 +194,31 @@ function UserHome() {
 
 
                     <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
-                        <img src={X} alt="Description" className="w-1/4 h-1/4 rounded-2xl" />
+                        <img src={X} alt="Description" className="w-1/5 h-1/5 rounded-2xl" />
                         <h1>
-                            <a href="#" className="hover:underline">LinkedIn</a>
+                            <a href="#" className="hover:underline">Twitter</a>
                         </h1>
                     </div>
 
 
                     <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
-                        <img src={Git} alt="Description" className="w-1/4 h-1/4 rounded-2xl" />
+                        <img src={Git} alt="Description" className="w-1/5 h-1/5 rounded-2xl" />
+                        <h1>
+                            <a href="#" className="hover:underline">GitHub</a>
+                        </h1>
+                    </div>
+
+                    <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
+                        <img src={Linked} alt="Description" className="w-1/5 h-1/5 rounded-2xl" />
                         <h1>
                             <a href="#" className="hover:underline">LinkedIn</a>
                         </h1>
                     </div>
 
                     <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
-                        <img src={Linked} alt="Description" className="w-1/4 h-1/4 rounded-2xl" />
+                        <img src={Insta} alt="Description" className="w-1/5 h-1/5 rounded-2xl" />
                         <h1>
-                            <a href="#" className="hover:underline">LinkedIn</a>
-                        </h1>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
-                        <img src={Insta} alt="Description" className="w-1/4 h-1/4 rounded-2xl" />
-                        <h1>
-                            <a href="#" className="hover:underline">LinkedIn</a>
+                            <a href="#" className="hover:underline">Instagram</a>
                         </h1>
                     </div>
 
