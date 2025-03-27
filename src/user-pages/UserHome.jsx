@@ -186,47 +186,31 @@ function UserHome() {
 
 
 
-            <div className="flex flex-col bg-black text-white h-full justify-center content-center items-center">
-                <h1 className="p-5 text-2xl md:text-7xl antialiased">
-                    Connect With Our Community !!
+            <div className="flex flex-col bg-black text-white h-full justify-center items-center py-10">
+    <h1 className="p-3 text-xl md:text-4xl antialiased text-center">
+        Connect With Our Community!
+    </h1>
+
+    <div className="relative grid grid-cols-2 grid-rows-2 gap-3 md:grid-cols-4 md:grid-rows-1 w-3/4 mt-6">
+        {[
+            { img: X, name: "Twitter" },
+            { img: Git, name: "GitHub" },
+            { img: Linked, name: "LinkedIn" },
+            { img: Insta, name: "Instagram" },
+        ].map((item, index) => (
+            <div
+                key={index}
+                className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-base font-medium rounded-lg transition-all duration-300 hover:border hover:border-white p-4"
+            >
+                <img src={item.img} alt={item.name} className="w-12 h-12 rounded-lg mb-2" />
+                <h1>
+                    <a href="#" className="hover:underline">{item.name}</a>
                 </h1>
-                <div className="relative grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-1 w-3/4">
-
-
-                    <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
-                        <img src={X} alt="Description" className="w-1/5 h-1/5 rounded-2xl" />
-                        <h1>
-                            <a href="#" className="hover:underline">Twitter</a>
-                        </h1>
-                    </div>
-
-
-                    <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
-                        <img src={Git} alt="Description" className="w-1/5 h-1/5 rounded-2xl" />
-                        <h1>
-                            <a href="#" className="hover:underline">GitHub</a>
-                        </h1>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
-                        <img src={Linked} alt="Description" className="w-1/5 h-1/5 rounded-2xl" />
-                        <h1>
-                            <a href="#" className="hover:underline">LinkedIn</a>
-                        </h1>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
-                        <img src={Insta} alt="Description" className="w-1/5 h-1/5 rounded-2xl" />
-                        <h1>
-                            <a href="#" className="hover:underline">Instagram</a>
-                        </h1>
-                    </div>
-
-                </div>
-
-
             </div>
-
+        ))}
+    </div>
+</div>
+ ̰
         </div>
 
     )
