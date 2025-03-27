@@ -10,14 +10,14 @@ const Navbar = () => {
 
   const localData = localStorage.getItem("userData");
   let data = localData ? JSON.parse(localData) : {}; // Ensure `data` is an object
-
-  console.log("data sucess",data.success)
-  console.log("type",typeof(data.success))
-  
+   
+  console.log("local data",data)
+  console.log("success res",data.success)
+  console.log("data type", typeof(data.success))
   // Ensure `data.success` is always a boolean
-  // if (typeof data.success !== "boolean") {
-  //   data.success = false;
-  // }
+  if (typeof data.success !== "boolean") {
+    data.success = false;
+  }
 
   return (
     <nav className="sticky top-0 z-10 bg-black backdrop-blur-lg text-black font-medium">
@@ -28,12 +28,12 @@ const Navbar = () => {
             <NavLink to="/">Uniator</NavLink>
           </span>
 
+          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-5 bg-gradient-to-br from-yellow-500 to-red-600 bg-clip-text text-transparent text-lg font-bold">
             <NavLink to="/" className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400">Home</NavLink>
             <NavLink to="/user-home" className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400">User-Access</NavLink>
             <NavLink to="/contact" className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400">Contact</NavLink>
             <NavLink to="/discussion" className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400">Community</NavLink>
-            <h1 className="hover:text-white hover:opacity-100 hover:scale-120 hover:border-b-2 hover:font-bold hover:border-blue-400"><Logout /></h1>
 
             {data.success || isAuthenticated ? (
               <Logout />
@@ -44,7 +44,6 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
           <button 
             className="md:hidden text-white text-2xl focus:outline-none" 
             onClick={() => setIsOpen(!isOpen)}
