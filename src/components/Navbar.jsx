@@ -7,8 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
   const { isAuthenticated } = useAuth0();  
   const [isOpen, setIsOpen] = useState(false);
-
-  const localData = localStorage.getItem("userData");
+//
+  const localData = localStorage.getItem("UserData");
   let data = localData ? JSON.parse(localData) : {}; // Ensure `data` is an object
    
   console.log("local data",data)
