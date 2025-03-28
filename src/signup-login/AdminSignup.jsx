@@ -39,6 +39,15 @@ function Adminuser() {
   }
 
 
+  if (NormaluserData && NormaluserData.email) {
+    localStorage.setItem("useremail", NormaluserData.email);
+    // console.log("New object stored in localStorage:", NormaluserData.email);
+  } else {
+    console.log("Error: Email is missing in NormaluserData");
+  }
+
+
+
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -46,7 +55,7 @@ function Adminuser() {
     if (response.success) {
       toast.success(response.message);
       setTimeout(() => {
-        navigate('/admin-login')
+        navigate('/login')
       }, 1000)
     }
     if (!response.success) toast.error(response.message)
