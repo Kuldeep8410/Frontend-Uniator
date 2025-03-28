@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../ContextApi/FisrtContext";
 import Class_Card_Component from "./Class_Card_Student";
+import Loader from "../UiComponents/Loader";
 
 function All_Class_Std({ x }) {
     const { AllGetReq } = useContext(AppContext);
@@ -68,7 +69,7 @@ function All_Class_Std({ x }) {
 
                 </div>
             ) : (
-                <p>Loading...</p>
+                <Loader/>
             )}
 
         </div>
