@@ -53,10 +53,8 @@ function Adminuser() {
     e.preventDefault();
     const response = await SendDataSignLogin("admin-sign-up", NewObject);
     console.log(response)
-    if (response.error) {
-      toast.error(response.error)
-    }
-    else if (response.success) {
+
+     if (response.success) {
       toast.success(response.message)
       setTimeout(() => {
         navigate("/otpvarification");
@@ -67,6 +65,9 @@ function Adminuser() {
       setTimeout(() => {
         navigate("/optvarification");
       }, 1000);
+    }
+    if(!response.success){
+      toast.error(response.message)
     }
 
     // console.log("re ̰sponse for admin: ", response);
