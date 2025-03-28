@@ -55,7 +55,7 @@ function Adminuser() {
     if (response.success) {
       toast.success(response.message);
       setTimeout(() => {
-        navigate('/login')
+        navigate('/otpvarification')
       }, 1000)
     }
     if (!response.success) toast.error(response.message)
