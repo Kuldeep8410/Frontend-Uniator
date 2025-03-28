@@ -92,10 +92,10 @@ function UserHome() {
 
     // which data to be displayed 
     const leftEditor = {
-        url: "/all-classes-student",
+        url: "#",
         head: "Monaic code",
-        para: "vs-code code editor try to use for real time collbroation in code",
-        name: "Go To All"
+        para: "UpComin feature, working on it",
+        name: "Disabled"
     }
     const logout = {
         url: '/logout',
@@ -118,7 +118,7 @@ function UserHome() {
 
     const QRComponent = {
         url: "/qrscanner",
-        head: "G1/G2 Entries",
+        head: "Gate-1/Gate-2 Entries",
         name: "Scan Qr"
     }
 

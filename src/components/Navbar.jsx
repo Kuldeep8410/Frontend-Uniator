@@ -64,7 +64,6 @@ const Navbar = () => {
               Login
             </NavLink>
           )}
-          <NavLink to="/contact" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">Contact</NavLink>
           <NavLink to="/discussion" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">Community</NavLink>
         </div>
       )}
