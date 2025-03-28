@@ -55,7 +55,7 @@ function OtpVerification() {
                 toast.success("OTP verified successfully")
                 setTimeout( () =>{
                     if(data.role == "Admin-user"){
-                        navigate('/otpvarification')
+                        navigate('/admin-login')
                     }
                     else{
                         navigate('/login')
