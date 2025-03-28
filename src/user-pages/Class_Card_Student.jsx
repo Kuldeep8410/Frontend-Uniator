@@ -5,7 +5,7 @@ import PopComponent from "../UiComponents/PopupComponent";
 import { ToastContainer, toast } from "react-toastify";
 
 function Class_Card_Component({ course, x }) {
-    const { SendDataSignLogin } = useContext(AppContext);
+    const { loading, SendDataSignLogin } = useContext(AppContext);
     const [ispopState, setPopUp] = useState(false);
     const navigate = useNavigate();
 
@@ -79,8 +79,12 @@ function Class_Card_Component({ course, x }) {
 
 
             {!x && (
-                <button className="bg-blue-800 font-bold w-1/2 p-1 ml-20 rounded-2xl hover:bg-green-600" onClick={MakeAttendance}>
-                    Mark Attendance
+                <button
+                    className={`bg-blue-800 font-bold w-1/2 p-1 ml-20 rounded-2xl hover:bg-green-600`}
+                    onClick={MakeAttendance}
+                    disabled={loading}
+                >
+                    {loading ? "Marking..." : "Mark Attendance"}
                 </button>
             )}
 
