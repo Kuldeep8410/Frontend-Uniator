@@ -11,7 +11,7 @@ function Adminuser() {
     username: "",
     email: "",
     password: "",
-    confirmpass: "", // ✅ ADDED
+    confirmpass: "",
     role: "Admin-user",
     FuckltyOf: "",
   });
@@ -24,44 +24,52 @@ function Adminuser() {
     }));
   };
 
-  const NewObject = {
-    name: NormaluserData.username,
-    email: NormaluserData.email,
-    password: NormaluserData.password,
-    role: NormaluserData.role,
-    FuckltyOf: NormaluserData.FuckltyOf,
-  };
-
-  if (NormaluserData.email) {
-    localStorage.setItem("useremail", NormaluserData.email);
-  } else {
-    console.log("Error: Email is missing in NormaluserData");
-  }
-
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    // ✅ Check if passwords match
-    if (NormaluserData.password !== NormaluserData.confirmpass) {
-      toast.error("Passwords do not match");
+    if (!NormaluserData.username || !NormaluserData.email || !NormaluserData.password || !NormaluserData.FuckltyOf) {
+      toast.error("All fields are required!");
       return;
     }
 
-    const response = await SendDataSignLogin("admin-sign-up", NewObject);
-    console.log(response);
+    if (NormaluserData.password !== NormaluserData.confirmpass) {
+      toast.error("Passwords do not match!");
+      return;
+    }
 
-    if (response.ok) {
-      toast.success(response.message);
-      setTimeout(() => {
-        navigate("/otpvarification");
-      }, 1000);
-    } else if (response.message === "User already exists, please login") {
-      toast.warn(response.message);
-      setTimeout(() => {
-        navigate("/admin-login");
-      }, 1000);
-    } else {
-      toast.error(response.message);
+    setLoading(true);
+
+    const NewObject = {
+      name: NormaluserData.username,
+      email: NormaluserData.email,
+      password: NormaluserData.password,
+      role: NormaluserData.role,
+      FuckltyOf: NormaluserData.FuckltyOf,
+    };
+
+    try {
+      const response = await SendDataSignLogin("admin-sign-up", NewObject);
+      console.log(response);
+
+      if (response.ok) {
+        toast.success(response.message);
+        localStorage.setItem("useremail", NormaluserData.email);
+        setTimeout(() => {
+          navigate("/otpvarification");
+        }, 1000);
+      } else if (response.message === "User already exists, please login") {
+        toast.warn(response.message);
+        setTimeout(() => {
+          navigate("/admin-login");
+        }, 1000);
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error("Signup failed, please try again.");
+      console.error("Signup Error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -110,6 +118,7 @@ function Adminuser() {
               name="FuckltyOf"
               value={NormaluserData.FuckltyOf}
               onChange={changeHandler}
+              required
               className="w-full px-4 py-2 mt-1 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
             >
               <option value="">Select An Option</option>
