@@ -52,6 +52,7 @@ function Adminuser() {
   const submitHandler = async (e) => {
     e.preventDefault();
     const response = await SendDataSignLogin("admin-sign-up", NewObject);
+    console.log(response)
     if (response.error) {
       toast.error(response.error)
     }
