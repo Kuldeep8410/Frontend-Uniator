@@ -27,8 +27,8 @@ function Class_Card_Component({ course, x }) {
             // console.log("Updated course response:", response);
             setPopUp(response.success);
 
-            if (response.success) toast.success(response.message);
-            else toast.error(response.message);
+            // if (response.success) toast.success(response.message);
+            // else toast.error(response.message);
 
             total_class = response.totalClass;
             AttendByYou = response.attendendClass;
