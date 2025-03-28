@@ -53,21 +53,21 @@ function Adminuser() {
     e.preventDefault();
     const response = await SendDataSignLogin("admin-sign-up", NewObject);
     console.log(response)
-    const data = response.json();
+    // const data = response.json();
 
-     if (data.user) {
-      toast.success(data.message)
+     if (response.ok) {
+      toast.success(response.message)
       setTimeout(() => {
         navigate("/otpvarification");
       }, 1000);
     }
-    else if (data.message === "User already exists, please login") {
+    else if (response.message === "User already exists, please login") {
       toast.warn(response.message)
       setTimeout(() => {
         navigate("/admin-login");
       }, 1000);
     }
-    if(!data.success){
+    if(!response.ok){
       toast.error(response.message)
     }
 
