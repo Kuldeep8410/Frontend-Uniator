@@ -52,13 +52,13 @@ function Adminuser() {
   const submitHandler = async (e) => {
     e.preventDefault();
     const response = await SendDataSignLogin("admin-sign-up", NewObject);
-    if (response.success) {
+    if (response) {
       toast.success(response.message);
       setTimeout(() => {
         navigate('/otpvarification')
       }, 1000)
     }
-    if (!response.success) toast.error(response.message)
+    if (!response) toast.error(response.message)
 
     // console.log("response for admin: ", response);
     // console.log("Your form data saved successfully", NormaluserData);
