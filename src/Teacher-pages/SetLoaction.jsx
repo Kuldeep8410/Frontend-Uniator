@@ -7,12 +7,13 @@ function SetLocation() {
     const [longitude, setLongitude] = useState(null);
     const [latitude, setLatitude] = useState(null);
     const [fetching, setFetching] = useState(false);
+    const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
         coursecode: "",
         radius: "",
     });
 
-    const { PutRequets ,loading} = useContext(AppContext);
+    const { PutRequets} = useContext(AppContext);
 
     // Function to fetch geolocation
     async function CallGeoLocation() {
@@ -42,6 +43,7 @@ function SetLocation() {
             courseCode: data.coursecode,
             radius: data.radius,
         };
+        setLoading(true);
 
         try {
             const response = await PutRequets("", objectForSendingData, "set-location-radius");
@@ -56,6 +58,7 @@ function SetLocation() {
             console.error("Error updating location:", error);
             toast.error("Something went wrong, please try again.");
         }
+        setLoading(false)
     }
 
     return (
