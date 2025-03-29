@@ -55,6 +55,7 @@ function VarifyLocation() {
             status: "Present",
         };
         console.log("User data for marking attendance:", newObj);
+        setLoading(true);
 
         try {
             const response = await SendDataSignLogin("attendance-marking", newObj);
@@ -72,6 +73,7 @@ function VarifyLocation() {
             console.error("Error updating attendance:", error);
             toast.error("Attendance marking failed. Try again.");
         }
+        setLoading(false)
     }
 
     return (
@@ -107,7 +109,7 @@ function VarifyLocation() {
                 className={`mt-4 px-4 py-2 font-semibold rounded-md 
         ${!responseData?.success ? "bg-gray-400 cursor-not-allowed" : "bg-green-500 hover:bg-green-600 text-black hover:cursor-pointer"}`}
             >
-                Mark Attendance
+                {loading ? ("Marking...") : ("Mark Attendance")}
             </button>
 
             <ToastContainer />
