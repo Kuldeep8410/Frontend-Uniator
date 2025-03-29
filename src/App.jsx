@@ -43,6 +43,8 @@ import Attendance from "./Documention/AttendanceMarking"
 import GatePassWorking from "./Documention/GatePassWorking"
 import AttendanceMarking from "./Documention/AttendanceMarking";
 import Loader2 from "./Loader";
+import SetLocation from "./Teacher-pages/SetLoaction";
+import VarifyLocation from "./user-pages/VarifiyLocation";
 
 
 
@@ -121,6 +123,10 @@ function App() {
             <Route path="/KnowAttendanceMarking"element = {<AttendanceMarking />} />
             <Route path="/classCreateTeacher"element = {<ClassCreate />} />
             <Route path="/gatePassWorking"element = {<GatePassWorking />} />
+
+            <Route path="/setlocation" element = {<SetLocation />} />
+            <Route path= "/varifylocaation/:_id" element = {<VarifyLocation />} />
+
 
 
           </Routes>
