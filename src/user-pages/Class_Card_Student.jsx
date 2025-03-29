@@ -5,7 +5,7 @@ import PopComponent from "../UiComponents/PopupComponent";
 import { ToastContainer, toast } from "react-toastify";
 
 function Class_Card_Component({ course, x }) {
-    const { loading, SendDataSignLogin } = useContext(AppContext);
+    const { SendDataSignLogin } = useContext(AppContext);
     const [ispopState, setPopUp] = useState(false);
     const navigate = useNavigate();
 
@@ -24,11 +24,11 @@ function Class_Card_Component({ course, x }) {
 
         try {
             const response = await SendDataSignLogin("attendance-marking", newObj);
-            // console.log("Updated course response:", response);
+            console.log("Updated course response:", response);
             setPopUp(response.success);
 
-            // if (response.success) toast.success(response.message);
-            // else toast.error(response.message);
+            if (response.success) toast.success(response.message);
+            else toast.error(response.message);
 
             total_class = response.totalClass;
             AttendByYou = response.attendendClass;
@@ -40,7 +40,7 @@ function Class_Card_Component({ course, x }) {
         }
     }
 
-    // console.log("out side ", total_class, AttendByYou);
+    console.log("out side ", total_class, AttendByYou);
     const percentage = parseInt((AttendByYou / total_class) * 100);
 
 
@@ -50,7 +50,12 @@ function Class_Card_Component({ course, x }) {
     const handleMoreInfoClick = () => {
         navigate(`/all-classes-student/${course.courseCode}/${course.courseName}/${course.Teacher}`);
     };
+    const SetLoaction = () => {
+        navigate(`/varifylocaation/${course._id}`);
+    };
+    
 
+    SetLoaction
 
 
     return (
@@ -79,14 +84,13 @@ function Class_Card_Component({ course, x }) {
 
 
             {!x && (
-                <button
-                    className={`bg-blue-800 font-bold w-1/2 p-1 ml-20 rounded-2xl hover:bg-green-600`}
-                    onClick={MakeAttendance}
-                    disabled={loading}
-                >
-                    {loading ? "Marking..." : "Mark Attendance"}
-                </button>
+               
+                <button className="bg-blue-800 font-bold w-1/2 p-1 ml-20 rounded-2xl hover:bg-green-600" onClick={SetLoaction}>
+                Varify and Mark attendance
+             </button>
             )}
+            
+
 
 
             {/* More Info & Attendance */}
@@ -97,9 +101,10 @@ function Class_Card_Component({ course, x }) {
                 >
                     More Info
                 </button>
-                {/* <h1 className="text-white font-bold border-1 p-1 rounded-xl w-6/12">
+
+                <h1 className="text-white font-bold border-1 p-1 rounded-xl w-6/12">
                     Your Atd: {AttendByYou}/{total_class} = {percentage}%
-                </h1> */}
+                </h1>
             </div>
 
 
