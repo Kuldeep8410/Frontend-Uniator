@@ -125,7 +125,7 @@ function UserHome() {
 
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col min-h-screen bg-black">
 
             <div className="flex flex-col relative bg-black items-center justify-center md:p-5 p-10 text-white">
                 <h1 className=" text-3xl text-white font-bold"> <span className="text-3xl text-red-500 font-bold">Hello !</span>
