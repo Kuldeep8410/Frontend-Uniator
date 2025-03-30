@@ -186,7 +186,7 @@ function UserHome() {
 
 
 
-            <div className="flex flex-col bg-black text-white h-full justify-center items-center py-10">
+            <div className="flex flex-col bg-black text-white h-screen justify-center items-center py-10">
     <h1 className="p-3 text-xl md:text-4xl antialiased text-center">
         Connect With Our Community!
     </h1>
