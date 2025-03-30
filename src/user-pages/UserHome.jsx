@@ -125,32 +125,27 @@ function UserHome() {
 
 
     return (
-        <div className="flex flex-col min-h-screen bg-black"> {/* Changed overscroll-y-none to min-h-screen */}
-            
-            {/* Navbar section (if any) would go here */}
+        <div className="flex flex-col">
 
-            {/* Hero section */}
-            <div className="flex flex-col bg-black items-center justify-center md:p-5 p-10 text-white">
-                <h1 className="text-3xl text-white font-bold"> 
-                    <span className="text-3xl text-red-500 font-bold">Hello !</span>
+            <div className="flex flex-col relative bg-black items-center justify-center md:p-5 p-10 text-white">
+                <h1 className=" text-3xl text-white font-bold"> <span className="text-3xl text-red-500 font-bold">Hello !</span>
                     <span className="text-3xl text-yellow-300 font-bold"> Student </span>
-                    How's Your class going
-                </h1>
-                <br />
+                    How's Your class going</h1>
+                <br></br>
                 <h1 className="text-2xl text-white font-bold">
                     Your <span className="text-2xl text-red-500 font-bold">Ultimate</span> Utilty Hub!
                 </h1>
                 <div className="flex items-center md:ml-50 md:mr-50">
-                    <p className="text-gray-400 p-10 items-center">
-                        Welcome to <span className="text-2xl text-yellow-300">Uniator</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. making it an all-in-one students, and organizations.
-                    </p>
+                    <p className="text-gray-400 p-10 items-center">Welcome to <span className="text-2xl text-yellow-300">Uniator</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. making it an all-in-one students, and organizations.</p>
                 </div>
             </div>
 
-            {/* Main content section */}
-            <div className="flex flex-col md:flex-row bg-black flex-1 gap-2 p-4"> {/* Changed to flex-1 to fill remaining space */}
+
+
+            <div className="main flex flex-col md:flex-row bg-black relative min-h-screen gap-2 p-4">
+
                 {/* Left Sidebar */}
-                <div className="left-div flex flex-col w-full md:w-1/5 bg-white/15 border-2 pl-1 pr-4 pt-5 rounded-2xl relative gap-5 md:h-auto"> {/* Changed md:h-screen to md:h-auto */}
+                <div className="left-div flex flex-col w-full md:w-1/5 bg-white/15 border-2 pl-1 pr-4 pt-5 rounded-2xl relative gap-5 md:h-screen">
                     <UserProfile props={userInfo} />
                     <LeftDivComp props={leftEditor} />
                     <LeftDivComp props={userInfo} />
@@ -159,8 +154,9 @@ function UserHome() {
 
                 {/* Middle Section */}
                 <div className="middle-div flex flex-col items-center justify-center bg-white/10 w-full md:w-3/5 p-2 rounded-2xl relative gap-4">
+
                     {/* Upper Section */}
-                    <div className="middle flex flex-col md:flex-row justify-center border-0 rounded-2xl text-white mt-2 mb-2 relative w-full md:h-[200px] gap-4">
+                    <div className="middle flex flex-col md:flex-row justify-center border-0 rounded-2xl  text-white mt-2 mb-2 relative w-full md:h-[200px] gap-4">
                         <Middle_upper props={QRComponent} color={"#13180f"} />
                         <Middle_upper props={attendance} color={"#13180f"} />
                         <Middle_upper props={AvailableClasses} color={"#13180f"} />
@@ -179,39 +175,44 @@ function UserHome() {
                 </div>
 
                 {/* Right Sidebar */}
-                <div className="right-div bg-white/10 w-full md:w-1/5 p-4 rounded-2xl relative md:h-auto"> {/* Changed md:h-screen to md:h-auto */}
+                <div className="right-div bg-white/10 w-full md:w-1/5 p-4 rounded-2xl relative md:h-screen">
                     <Todo_Page />
                     <CommunityForum />
                     <RightDivComp props={userInfo} />
                 </div>
+
             </div>
 
-            {/* Footer section */}
-            <div className="flex flex-col bg-black text-white justify-center items-center py-10">
-                <h1 className="p-3 text-xl md:text-4xl antialiased text-center">
-                    Connect With Our Community!
+
+
+
+            <div className="flex flex-col bg-black text-white h-full justify-center items-center py-10">
+    <h1 className="p-3 text-xl md:text-4xl antialiased text-center">
+        Connect With Our Community!
+    </h1>
+
+    <div className="relative grid grid-cols-2 grid-rows-2 gap-3 md:grid-cols-4 md:grid-rows-1 w-3/4 mt-6">
+        {[
+            { img: X, name: "Twitter" },
+            { img: Git, name: "GitHub" },
+            { img: Linked, name: "LinkedIn" },
+            { img: Insta, name: "Instagram" },
+        ].map((item, index) => (
+            <div
+                key={index}
+                className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-base font-medium rounded-lg transition-all duration-300 hover:border hover:border-white p-4"
+            >
+                <img src={item.img} alt={item.name} className="w-12 h-12 rounded-lg mb-2" />
+                <h1>
+                    <a href="#" className="hover:underline">{item.name}</a>
                 </h1>
-
-                <div className="relative grid grid-cols-2 grid-rows-2 gap-3 md:grid-cols-4 md:grid-rows-1 w-3/4 mt-6">
-                    {[
-                        { img: X, name: "Twitter" },
-                        { img: Git, name: "GitHub" },
-                        { img: Linked, name: "LinkedIn" },
-                        { img: Insta, name: "Instagram" },
-                    ].map((item, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-base font-medium rounded-lg transition-all duration-300 hover:border hover:border-white p-4"
-                        >
-                            <img src={item.img} alt={item.name} className="w-12 h-12 rounded-lg mb-2" />
-                            <h1>
-                                <a href="#" className="hover:underline">{item.name}</a>
-                            </h1>
-                        </div>
-                    ))}
-                </div>
             </div>
+        ))}
+    </div>
+</div>
+ ̰
         </div>
+
     )
 }
 export default UserHome;
