@@ -25,7 +25,7 @@ function Signup() {
       ) : (
         <div className="relative flex flex-col rounded-2xl justify-center items-center p-4 m-3 w-1/1 md:w-2/7 border-2 bg-black text-blue-50 gap-4">
           {/* Buttons with active state styling */}
-          <div className="flex w-3/5 rounded-2xl border-2 justify-center">
+          <div className="flex w-3/5 rounded-2xl  justify-center">
             <button
               className={`px-4 py-2 rounded-md h-10 m-2 transition-all 
             ${isTrue
