@@ -11,11 +11,11 @@ const FetchAllPost = () => {
     const { AllGetReq } = useContext(AppContext);
 
     const fetchPosts = useCallback(async () => {
-        if (loading) return;
+        if (loading || !hasMore) return; // Prevent multiple calls if already loading or no more posts
         setLoading(true);
 
-        const queryparams = { limit: 20 };
-        if (cursor) queryparams.cursor = cursor; // ✅ Avoid sending `null` cursor
+        const queryparams = { limit: 10 };
+        if (cursor) queryparams.cursor = cursor; // ✅ Use cursor for pagination
 
         try {
             const data = await AllGetReq("all-posts", queryparams) || {}; // Ensure data is at least an empty object
@@ -23,6 +23,7 @@ const FetchAllPost = () => {
 
             if (!data.success) {
                 console.error("Failed to fetch posts:", data.message);
+                setLoading(false);
                 return;
             }
 
@@ -31,7 +32,7 @@ const FetchAllPost = () => {
             setPosts((prev) => [...prev, ...newPosts]);
 
             if (data.nextCursor) {
-                setCursor(data.nextCursor); // Update cursor if there are more posts
+                setCursor(data.nextCursor); // Update cursor if more posts exist
             } else {
                 setHasMore(false); // Stop fetching if no more posts
             }
@@ -40,7 +41,7 @@ const FetchAllPost = () => {
         }
 
         setLoading(false);
-    }, [loading, cursor, AllGetReq]);
+    }, [loading, cursor, hasMore, AllGetReq]);
 
     useEffect(() => {
         fetchPosts(); // Fetch posts on initial mount
