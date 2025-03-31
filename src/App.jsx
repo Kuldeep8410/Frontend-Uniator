@@ -35,16 +35,14 @@ import CommunityNavbar from "./Discusion/CommunityNavbar";
 import Footer from "./UiComponents/Footer";
 import LandingPage from "./Landingpage/Landing_page";
 import ClassDetailParticular from "./user-pages/ClassDetailParicular";
-import StatsSection from "./Landingpage/Upstash";
-
 import QrWorking from "./Documention/QrWorking";
-import ClassCreate from './Documention/ClassCreate'
-import Attendance from "./Documention/AttendanceMarking"
-import GatePassWorking from "./Documention/GatePassWorking"
+import ClassCreate from "./Documention/ClassCreate";
+import GatePassWorking from "./Documention/GatePassWorking";
 import AttendanceMarking from "./Documention/AttendanceMarking";
-import Loader2 from "./Loader";
 import SetLocation from "./Teacher-pages/SetLoaction";
 import VarifyLocation from "./user-pages/VarifiyLocation";
+import FetchAllPost from "./Discusion/FetchAllPost";
+import PostDetail from "./Discusion/PostDetails";
 
 
 
@@ -93,6 +91,12 @@ function App() {
             </Route>
 
 
+{/* Documentation of project */}
+            <Route path="/Qr-working-docs" element={<QrWorking />} />
+            <Route path= "/attendace-marking-docs" element = {<AttendanceMarking />} />
+            <Route path="/class-creating-docs" element = {<ClassCreate />} />
+            <Route path="/gatepss-working-docs" element = {<GatePassWorking />} />
+
 
 
 
@@ -116,17 +120,11 @@ function App() {
             <Route path="/administrator-login" element={<SUlogin />} />
 
             <Route path="/makepost"element = {<MakePost />} />
-            <Route path="/upstash" element = {<StatsSection />} />
-
-
-            <Route path="/KnowQr-WORKING"element = {<QrWorking />} />
-            <Route path="/KnowAttendanceMarking"element = {<AttendanceMarking />} />
-            <Route path="/classCreateTeacher"element = {<ClassCreate />} />
-            <Route path="/gatePassWorking"element = {<GatePassWorking />} />
 
             <Route path="/setlocation" element = {<SetLocation />} />
             <Route path= "/varifylocaation/:_id" element = {<VarifyLocation />} />
-
+            <Route path="/all-posts" element={<FetchAllPost />} />
+            <Route path="/posts/detail/:id" element = {<PostDetail />} />
 
 
           </Routes>
@@ -134,8 +132,14 @@ function App() {
 
           {/* <HashLoader color='green' /> */}
           <div className="grid grid-cols-3 text-xl text-white bg-black z-20 p-5 ">
+            <a href="/otpvarification">otpvarification</a>
+            <a href="/qrscanner">qrscanner</a>
+            <a href="/qrgenerator">qrgenerator</a>
             <a href="/admin-dashboard">teacher-dashboard</a>
             <a href="/admin-login">Teacher-login</a>
+            <a href="/user-home">user-home</a>
+            <a href="/discussion/makepost">Mkae posts</a>
+            <a href="/upload">Image Upload</a>
             <a href="/administrator">Adminstrator Dashboard</a>
             <a href="/administrator-login">Administrator Login</a>
           </div>
