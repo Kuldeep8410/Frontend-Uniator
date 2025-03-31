@@ -47,6 +47,21 @@ const FetchAllPost = () => {
         fetchPosts(); // Fetch posts on initial mount
     }, []); // Empty dependency array to run only on mount
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (
+                window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 &&
+                !loading &&
+                hasMore
+            ) {
+                fetchPosts();
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [loading, hasMore, fetchPosts]);
+
     return (
         <div className="p-4">
             {posts.length === 0 && !loading && <p>No posts found.</p>}
