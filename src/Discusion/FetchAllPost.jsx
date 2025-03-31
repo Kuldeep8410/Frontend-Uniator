@@ -11,10 +11,10 @@ const FetchAllPost = () => {
     const { AllGetReq } = useContext(AppContext);
 
     const fetchPosts = useCallback(async () => {
-        if (loading) return; // Prevent multiple clicks while loading
+        if (loading) return;
         setLoading(true);
 
-        const queryparams = { limit: 10 };
+        const queryparams = { limit: 20 };
         if (cursor) queryparams.cursor = cursor; // ✅ Avoid sending `null` cursor
 
         try {
