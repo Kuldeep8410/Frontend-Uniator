@@ -58,7 +58,7 @@ function ImageUpload() {
         //in inbuilt formData
         const formData = new FormData();
         formData.append("gkcloud", selectedFile);
-        formData.append("email", email);
+        formData.append("email", userEmail);
 
 
         try {
