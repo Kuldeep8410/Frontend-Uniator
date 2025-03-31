@@ -14,19 +14,24 @@ const FetchAllPost = () => {
         if (!hasMore || loading) return; // Prevent unnecessary calls
         setLoading(true);
 
-        const queryparams = {
-            limit: 10,
-            cursor: cursor, // Pass `null` initially for first fetch
-        };
+        const queryparams = { limit: 10 };
+        if (cursor) queryparams.cursor = cursor; // ✅ Avoid sending `null` cursor
 
         try {
-            const data = await AllGetReq("all-posts", queryparams);
-            console.log("Fetched posts:", data);
+            const data = await AllGetReq("all-posts", queryparams) || {}; // Ensure data is at least an empty object
+            console.log("Fetched data:", data);
 
-            setPosts((prev) => [...prev, ...data.posts]);
+            if (!data.success) {
+                console.error("Failed to fetch posts:", data.message);
+                return;
+            }
+
+            // Ensure posts is an array
+            const newPosts = Array.isArray(data.posts) ? data.posts : [];
+            setPosts((prev) => [...prev, ...newPosts]);
 
             if (data.nextCursor) {
-                setCursor(data.nextCursor); // Update cursor only if there are more posts
+                setCursor(data.nextCursor); // Update cursor if there are more posts
             } else {
                 setHasMore(false); // Stop fetching if no more posts
             }
@@ -35,7 +40,7 @@ const FetchAllPost = () => {
         }
 
         setLoading(false);
-    }, [hasMore, loading, AllGetReq]); // Removed `cursor` to prevent infinite loop
+    }, [hasMore, loading, cursor, AllGetReq]); // Added `cursor` to dependencies
 
     useEffect(() => {
         fetchPosts(); // Fetch posts on initial mount
