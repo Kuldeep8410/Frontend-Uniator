@@ -32,7 +32,7 @@ function QrvarificationG1g2({ Qrvalue }) {
                 }}
                 className="px-4 py-2 bg-blue-800 text-white rounded"
             >
-                Check Status
+                {scanning ? ("Checking") : ("Check Status")}
             </button>
 
             {scanning && response && (
