@@ -191,24 +191,7 @@ function UserHome() {
         Connect With Our Community!
     </h1>
 
-    <div className="relative grid grid-cols-2 grid-rows-2 gap-3 md:grid-cols-4 md:grid-rows-1 w-3/4 mt-6">
-        {[
-            { img: X, name: "Twitter" },
-            { img: Git, name: "GitHub" },
-            { img: Linked, name: "LinkedIn" },
-            { img: Insta, name: "Instagram" },
-        ].map((item, index) => (
-            <div
-                key={index}
-                className="flex flex-col items-center justify-center w-full aspect-square bg-white/10 text-white text-base font-medium rounded-lg transition-all duration-300 hover:border hover:border-white p-4"
-            >
-                <img src={item.img} alt={item.name} className="w-12 h-12 rounded-lg mb-2" />
-                <h1>
-                    <a href="#" className="hover:underline">{item.name}</a>
-                </h1>
-            </div>
-        ))}
-    </div>
+   
 </div>
  ̰
         </div>
