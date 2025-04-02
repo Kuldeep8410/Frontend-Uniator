@@ -42,10 +42,10 @@ function AddEntryExitQr() {
             });
 
             const data = await response.json();
-            console.log(data.success);
-            if (data.success) {
+           
+            if (success) {
                 toast.success("QR CODE Update Successfully")
-                console.log("QR Data updated:", data);
+                // console.log("QR Data updated:", data);
             } else {
                 toast.error("Failed To Update QR CODE")
                 console.error("Failed to update QR data:", data.message);
