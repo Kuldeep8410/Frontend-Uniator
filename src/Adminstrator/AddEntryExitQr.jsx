@@ -43,7 +43,7 @@ function AddEntryExitQr() {
 
             const data = await response.json();
            
-            if (success) {
+            if (response.success) {
                 toast.success("QR CODE Update Successfully")
                 // console.log("QR Data updated:", data);
             } else {
