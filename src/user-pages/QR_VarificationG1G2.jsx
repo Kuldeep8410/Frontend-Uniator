@@ -29,6 +29,7 @@ function QrvarificationG1g2({ Qrvalue }) {
                 onClick={() => {     //awesom logic best use of call back
                     setScanning(true);
                     varifcation();
+                    setScanning(false);
                 }}
                 className="px-4 py-2 bg-blue-800 text-white rounded"
             >
