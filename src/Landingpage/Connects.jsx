@@ -26,7 +26,7 @@ function Connects() {
                 <div className="flex flex-col items-center justify-center w-full aspect-square  text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:border-2 hover:border-white">
                     <img src={Git} alt="Description" className="w-1/4 h-1/4 rounded-2xl" />
                     <h1>
-                        <a href="#" className="hover:underline">Github</a>
+                        <a href="https://github.com/Kuldeep8410" className="hover:underline">Github</a>
                     </h1>
                 </div>
 
