@@ -182,18 +182,7 @@ function UserHome() {
                 </div>
 
             </div>
-
-
-
-
-            <div className="flex flex-col bg-black text-white h-full justify-center items-center py-10">
-    <h1 className="p-3 text-xl md:text-4xl antialiased text-center">
-        Connect With Our Community!
-    </h1>
-
-   
-</div>
- ̰
+            ̰
         </div>
 
     )
