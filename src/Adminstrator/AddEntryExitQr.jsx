@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Loader from "../UiComponents/Loader";
+import { toast, ToastContainer } from "react-toastify";
 
 const BASE_URL = "https://uniator-backend.onrender.com//mern-revision/v1";
 
@@ -41,11 +42,12 @@ function AddEntryExitQr() {
             });
 
             const data = await response.json();
+            console.log(data.success);
             if (data.success) {
-                alert("QR CODE Update Successfully")
+                toast.success("QR CODE Update Successfully")
                 console.log("QR Data updated:", data);
             } else {
-                alert("Failed To Update QR CODE")
+                toast.error("Failed To Update QR CODE")
                 console.error("Failed to update QR data:", data.message);
             }
         } catch (error) {
@@ -93,6 +95,7 @@ function AddEntryExitQr() {
                     </form>
                 </div>
             )}
+            <ToastContainer />
         </div>
     );
 }
