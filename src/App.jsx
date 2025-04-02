@@ -132,14 +132,14 @@ function App() {
 
           {/* <HashLoader color='green' /> */}
           <div className="grid grid-cols-3 text-xl text-white bg-black z-20 p-5 ">
-            <a href="/otpvarification">otpvarification</a>
-            <a href="/qrscanner">qrscanner</a>
-            <a href="/qrgenerator">qrgenerator</a>
+            {/* <a href="/otpvarification">otpvarification</a> */}
+            {/* <a href="/qrscanner">qrscanner</a> */}
+            {/* <a href="/qrgenerator">qrgenerator</a> */}
             <a href="/admin-dashboard">teacher-dashboard</a>
             <a href="/admin-login">Teacher-login</a>
-            <a href="/user-home">user-home</a>
-            <a href="/discussion/makepost">Mkae posts</a>
-            <a href="/upload">Image Upload</a>
+            {/* <a href="/user-home">user-home</a> */}
+            {/* <a href="/discussion/makepost">Mkae posts</a> */}
+            {/* <a href="/upload">Image Upload</a> */}
             <a href="/administrator">Adminstrator Dashboard</a>
             <a href="/administrator-login">Administrator Login</a>
           </div>
