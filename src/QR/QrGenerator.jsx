@@ -52,7 +52,7 @@ const QrGenerator = () => {
       {text && (
         <div>
           {/* Attach ref to the QR Code SVG */}
-          <QRCode value={text} size={256} ref={svgRef} bgColor={"#FFFFFF"}/>
+          <QRCode value={text} size={256} ref={svgRef} bgColor={"#FFFFFF"} fgColor={"#FFFFFF"}/>
         </div>
       )}
 
