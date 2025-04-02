@@ -23,10 +23,11 @@ function LandingPage() {
                 .animate-marquee {
                     display: inline-block;
                     white-space: nowrap;
-                    animation: marquee 15s linear infinite; /* Slower animation for smooth scrolling */
+                    animation: marquee 10s linear infinite; /* Back to original speed */
                 }
                 `}
             </style>
+
 
             {/* Welcome Section */}
             <div className="flex flex-col items-center text-center px-4 md:px-20">
