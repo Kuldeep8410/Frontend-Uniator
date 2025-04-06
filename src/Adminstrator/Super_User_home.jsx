@@ -38,16 +38,12 @@ function SuperUserHome() {
                 {/* Sidebar with Multiple Buttons */}
                 <div className="sm:w-1/5 sm:flex-row bg-black sm:h-screen rounded-2xl h-[400px] p-2 relative">
                 <SUProf />
-                    <button onClick={() => handleButtonClick("All_Class")} className="border-2 border-cyan-500 rounded-2xl text-white p-2  m-2 w-9/10">
-                        All Classes
-                    </button>
+                   
                    
                     <button onClick={() => handleButtonClick("Qr Add")} className="border-2 border-cyan-500 rounded-2xl text-white p-2  m-2 w-9/10">
                         Qr Add 
                     </button>
-                    <button onClick={() => handleButtonClick("Delete_User")} className="border-2 border-cyan-500 rounded-2xl text-white p-2  m-2 w-9/10">
-                        Delete User
-                    </button>
+                   
                    
                     <button onClick={() => handleButtonClick("entrieslog")} className="border-2 border-cyan-500 rounded-2xl text-white p-2  m-2 w-9/10">
                        Entry Exit Log
@@ -65,11 +61,8 @@ function SuperUserHome() {
 
                 {/* Main Content */}
                 <div className="sm:w-4/5 bg-black sm:h-screen rounded-2xl h-[400px] p-4">
-                    {selectedButton === "All_Class" && <All_Class_adm />}
                     
-                    {selectedButton === "Qr Add" &&<QrGenerator/>}
-                    {selectedButton === "Delete_User" && <DeleteUser />}
-        
+                    {selectedButton === "Qr Add" &&<QrGenerator/>}        
 
                     {selectedButton === "entrieslog" && <EntriesLog />}
 
