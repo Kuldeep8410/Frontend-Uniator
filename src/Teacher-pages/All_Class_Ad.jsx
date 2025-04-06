@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../ContextApi/FisrtContext";
 import ClassComponent from "./Created_Class_Comp";
+import Loader from "../UiComponents/Loader";
 
 function All_Class_adm() {
     const { AllGetReq } = useContext(AppContext);
@@ -53,7 +54,7 @@ function All_Class_adm() {
                         ))}
                     </div>
                 ) : (
-                    <p>Loading...</p>
+                    <Loader />
                 )}
             </div>
         </div>
