@@ -65,7 +65,7 @@ function ClassComponent({ course }) {
             className={`${isStart ? "bg-green-500" : "bg-red-600"} w-full sm:w-1/2 p-2 mx-auto rounded-2xl bg-green-700 font-bold mt-3`}
             onClick={AttendanceHandler}
         >
-            {isStart ? "Start Attendance" : "Stop Attendance"}
+            {isStart ? "Started Attendance" : "Stopped Attendance"}
         </button>
     
         {/* Entry Time Info */}
