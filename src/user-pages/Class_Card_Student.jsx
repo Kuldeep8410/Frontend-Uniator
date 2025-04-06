@@ -40,10 +40,6 @@ function Class_Card_Component({ course, x }) {
         }
     }
 
-    console.log("out side ", total_class, AttendByYou);
-    const percentage = parseInt((AttendByYou / total_class) * 100);
-
-
 
 
     // Function to navigate to course details page
@@ -102,9 +98,6 @@ function Class_Card_Component({ course, x }) {
                     More Info
                 </button>
 
-                <h1 className="text-white font-bold border-1 p-1 rounded-xl w-6/12">
-                    Your Atd: {AttendByYou}/{total_class} = {percentage}%
-                </h1>
             </div>
 
 
