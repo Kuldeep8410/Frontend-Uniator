@@ -3,8 +3,9 @@ import { AppContext } from '../ContextApi/FisrtContext';
 import { toast, ToastContainer } from 'react-toastify';
 
 function Attendance() {
-    const { AllGetReq } = useContext(AppContext);
+    const { AllGetReq, loading } = useContext(AppContext);
     const [res, setRes] = useState(null); 
+
 
     const [course, setCourse] = useState({
         courseCode1: "",
@@ -119,7 +120,7 @@ function Attendance() {
                         onChange={onChangeHandler}
                     />
                 </label>
-                <button onClick={CourseWiseAtt} className="bg-blue-700 p-2 rounded">
+                <button onClick={CourseWiseAtt} disabled className="bg-blue-700 p-2 rounded">
                     Show
                 </button>
             </div>
@@ -148,7 +149,7 @@ function Attendance() {
                     />
                 </label>
                 <button onClick={AttendanceOfA_student} className="bg-blue-700 w-2/5 p-2">
-                    Show Student Attendance
+                    {loading ? ("loading.....") : ("Show Student Attendance")}
                 </button>
             </div>
 
