@@ -21,7 +21,6 @@ function Attendance() {
     }
 
     async function CourseWiseAtt() {
-        //get-attendace-all-course
         try {
             const CourseCode = course.courseCode1.trim();
             if (!CourseCode) {
@@ -77,36 +76,38 @@ function Attendance() {
         }
 
         return (
-            <table className="min-w-full table-auto text-left mt-4 border-collapse">
-                <thead>
-                    <tr className="bg-gray-800">
-                        <th className="px-4 py-2 text-white">Date</th>
-                        <th className="px-4 py-2 text-white">Student ID</th>
-                        <th className="px-4 py-2 text-white">Attendance Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {res.data.map((record) => (
-                        <tr key={record._id} className="bg-white border-b">
-                            <td className="px-4 py-2">{new Date(record.date).toLocaleString()}</td>
-                            {record.attendanceRecords.map((attendance, index) => (
-                                <tr key={attendance._id}>
-                                    <td className="px-4 py-2"></td>
-                                    <td className="px-4 py-2">{attendance.student}</td>
-                                    <td className="px-4 py-2">{attendance.status}</td>
-                                </tr>
-                            ))}
+            <div className="overflow-x-auto mt-4">
+                <table className="min-w-full table-auto text-left border-collapse">
+                    <thead>
+                        <tr className="bg-gray-800">
+                            <th className="px-4 py-2 text-white">Date</th>
+                            <th className="px-4 py-2 text-white">Student ID</th>
+                            <th className="px-4 py-2 text-white">Attendance Status</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {res.data.map((record) => (
+                            <tr key={record._id} className="bg-white border-b">
+                                <td className="px-4 py-2">{new Date(record.date).toLocaleString()}</td>
+                                {record.attendanceRecords.map((attendance, index) => (
+                                    <tr key={attendance._id}>
+                                        <td className="px-4 py-2"></td>
+                                        <td className="px-4 py-2">{attendance.student}</td>
+                                        <td className="px-4 py-2">{attendance.status}</td>
+                                    </tr>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         );
     };
 
     return (
         <div className="bg-black text-white flex flex-col">
             {/* Attendance by Course */}
-            <div className="flex flex-col gap-1 border p-2 rounded m-2 relative w-3/4">
+            <div className="flex flex-col gap-1 border p-2 rounded m-2 relative w-full sm:w-3/4">
                 <h1>Attendance By Course Code</h1>
                 <label>
                     Enter Course Code:
@@ -124,7 +125,7 @@ function Attendance() {
             </div>
 
             {/* Attendance by Student Entry */}
-            <div className="flex flex-col gap-1 border p-2 rounded m-2 relative w-3/4">
+            <div className="flex flex-col gap-1 border p-2 rounded m-2 relative w-full sm:w-3/4">
                 <h1>Attendance Entry Wise and In A Course</h1>
                 <label>
                     Enter Course Code:
