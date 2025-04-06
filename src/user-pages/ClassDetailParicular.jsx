@@ -107,7 +107,7 @@ const ClassDetailParticular = () => {
            )}
 
             {/* Additional Content */}
-            <GridCards />
+           
             <ToastContainer />
         </div>
     );
