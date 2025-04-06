@@ -3,7 +3,7 @@ import { AppContext } from "../ContextApi/FisrtContext";
 import { toast, ToastContainer } from "react-toastify";
 
 function FacultyDetails({ email, userType, removeUrl, DetailsUrl, heading }) {
-    const { AllGetReq } = useContext(AppContext);
+    const { AllGetReq, loading } = useContext(AppContext);
     const [res, setRes] = useState("");
 
     const [data, setData] = useState({
@@ -95,7 +95,7 @@ function FacultyDetails({ email, userType, removeUrl, DetailsUrl, heading }) {
                     onClick={removeUser}
                     className="w-full mt-3 p-2 bg-red-500 hover:bg-red-700 text-white font-bold rounded-md transition"
                 >
-                    Remove User
+                   {loading ? ("Removing....") : (" Remove User")}
                 </button>
             </div>
 
