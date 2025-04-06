@@ -6,13 +6,11 @@ function Attendance() {
     const { AllGetReq } = useContext(AppContext);
     const [res, setRes] = useState(null); 
 
-
     const [course, setCourse] = useState({
         courseCode1: "",
         courseCode2: "",
         entryNumber: ""
     });
-
 
     function onChangeHandler(event) {
         const { name, value } = event.target;
@@ -21,10 +19,8 @@ function Attendance() {
             [name]: value
         }));
     }
-    
 
     async function CourseWiseAtt() {
-
         //get-attendace-all-course
         try {
             const CourseCode = course.courseCode1.trim();
@@ -33,7 +29,6 @@ function Attendance() {
                 return;
             }
 
-            // console.log("Fetching attendance for Course:", CourseCode);
             const response = await AllGetReq("get-attendace-all-course", { courseCode: CourseCode });
 
             if (!response || !response.success) {
@@ -48,8 +43,6 @@ function Attendance() {
         }
     }
 
-
-
     async function AttendanceOfA_student() {
         try {
             const CourseCode = course.courseCode2.trim();
@@ -60,7 +53,6 @@ function Attendance() {
                 return;
             }
 
-            // console.log("Fetching student attendance for:", { CourseCode, studentEmail });
             const response = await AllGetReq("get-student-attendance-by-entry", {
                 courseCode: CourseCode,
                 studentEmail: studentEmail
@@ -78,8 +70,39 @@ function Attendance() {
         }
     }
 
+    // Render Table for Response Data
+    const renderAttendanceTable = (res) => {
+        if (!res || !res.data || res.data.length === 0) {
+            return <p>No attendance records found.</p>;
+        }
 
-    
+        return (
+            <table className="min-w-full table-auto text-left mt-4 border-collapse">
+                <thead>
+                    <tr className="bg-gray-800">
+                        <th className="px-4 py-2 text-white">Date</th>
+                        <th className="px-4 py-2 text-white">Student ID</th>
+                        <th className="px-4 py-2 text-white">Attendance Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {res.data.map((record) => (
+                        <tr key={record._id} className="bg-white border-b">
+                            <td className="px-4 py-2">{new Date(record.date).toLocaleString()}</td>
+                            {record.attendanceRecords.map((attendance, index) => (
+                                <tr key={attendance._id}>
+                                    <td className="px-4 py-2"></td>
+                                    <td className="px-4 py-2">{attendance.student}</td>
+                                    <td className="px-4 py-2">{attendance.status}</td>
+                                </tr>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        );
+    };
+
     return (
         <div className="bg-black text-white flex flex-col">
             {/* Attendance by Course */}
@@ -131,7 +154,7 @@ function Attendance() {
             {/* Response Section */}
             <div>
                 {res ? (
-                    <p>{JSON.stringify(res, null, 2)}</p>
+                    renderAttendanceTable(res)  // Display table with attendance data
                 ) : (
                     <h1>No response</h1>
                 )}
