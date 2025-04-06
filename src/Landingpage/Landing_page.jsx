@@ -66,7 +66,7 @@ function LandingPage() {
 
                 {/* Button */}
                 <div className="mt-4 sm:mt-0">
-                    <a className="bg-teal-700 hover:bg-teal-800 px-4 py-2 rounded-lg text-white text-sm sm:text-base transition-all duration-200" href="#">
+                    <a className="bg-teal-700 hover:bg-teal-800 px-4 py-2 rounded-lg text-white text-sm sm:text-base transition-all duration-200" href="https://github.com/Kuldeep8410?tab=repositories">
                         Explore Us
                     </a>
                 </div>
