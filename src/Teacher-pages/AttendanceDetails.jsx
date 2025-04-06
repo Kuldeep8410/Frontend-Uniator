@@ -92,7 +92,7 @@ function Attendance() {
                                 {record.attendanceRecords.map((attendance, index) => (
                                     <tr key={attendance._id}>
                                         <td className="px-4 py-2"></td>
-                                        <td className="px-4 py-2">{attendance.student}</td>
+                                        {/* <td className="px-4 py-2">{attendance.student}</td> */}
                                         <td className="px-4 py-2">{attendance.status}</td>
                                     </tr>
                                 ))}
