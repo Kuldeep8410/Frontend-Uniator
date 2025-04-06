@@ -88,7 +88,7 @@ function Attendance() {
                     <tbody>
                         {res.data.map((record) => (
                             <tr key={record._id} className="bg-black border-b">
-                                <td className="px-4 py-2">{new Date(record.date).setHours(0, 0, 0).toLocaleString()}</td>
+                                <td className="px-4 py-2">{new Date(record.date).toLocaleString()}</td>
                                 {record.attendanceRecords.map((attendance, index) => (
                                     <tr key={attendance._id}>
                                         <td className="px-4 py-2"></td>
