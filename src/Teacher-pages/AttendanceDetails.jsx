@@ -81,14 +81,14 @@ function Attendance() {
                     <thead>
                         <tr className="bg-gray-800">
                             <th className="px-4 py-2 text-white">Date</th>
-                            <th className="px-4 py-2 text-white">Student ID</th>
+                            {/* <th className="px-4 py-2 text-white">Student ID</th> */}
                             <th className="px-4 py-2 text-white">Attendance Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         {res.data.map((record) => (
                             <tr key={record._id} className="bg-black border-b">
-                                <td className="px-4 py-2">{new Date(record.date).toLocaleString()}</td>
+                                <td className="px-4 py-2">{new Date(record.date).setHours(0, 0, 0).toLocaleString()}</td>
                                 {record.attendanceRecords.map((attendance, index) => (
                                     <tr key={attendance._id}>
                                         <td className="px-4 py-2"></td>
