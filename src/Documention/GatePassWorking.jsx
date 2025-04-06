@@ -19,7 +19,7 @@ function GatePassWorking() {
                 {/* Gate Pass Workflow */}
                 <h3 className="text-xl font-semibold mt-4">2. How the Gate Pass System Works</h3>
 
-                <h4 className="text-lg font-semibold mt-2">📌 Admin-Generated QR Codes for Entry & Exit</h4>
+                <h4 className="text-lg font-semibold mt-2">Admin-Generated QR Codes for Entry & Exit</h4>
                 <p className="text-gray-300 text-sm mt-2">
                     - The **admin** generates two distinct **QR codes**: one for **entry** and one for **exit**.  
                     - These QR codes are refreshed **periodically** to prevent misuse.
@@ -27,13 +27,13 @@ function GatePassWorking() {
 
                
 
-                <h4 className="text-lg font-semibold mt-2">📌 University Email Verification</h4>
+                <h4 className="text-lg font-semibold mt-2">University Email Verification</h4>
                 <p className="text-gray-300 text-sm mt-2">
                     - Only students with an **official university email** (e.g., *abc@smvdu.ac.in*) are allowed.  
                     
                 </p>
 
-                <h4 className="text-lg font-semibold mt-2">📌 Real-Time Entry & Exit Logs</h4>
+                <h4 className="text-lg font-semibold mt-2">Real-Time Entry & Exit Logs</h4>
                 <p className="text-gray-300 text-sm mt-2">
                     - Each **scan is logged in real-time** with timestamps.  
                     - Admins can **track** student movements and **prevent misuse**.
@@ -57,10 +57,10 @@ function GatePassWorking() {
                 {/* Benefits of the System */}
                 <h3 className="text-xl font-semibold mt-6">4. Benefits of the QR-Based Gate Pass System</h3>
                 <ul className="list-disc list-inside text-gray-300 text-sm mt-2">
-                    <li>✅ **QR-based scanning** ensures quick and **contactless** verification.</li>
-                    <li>✅ **Admin-controlled QR generation** prevents unauthorized access.</li>
-                    <li>✅ **University email verification** blocks non-students.</li>
-                    <li>✅ **Real-time logs** enhance security and tracking.</li>
+                    <li>**QR-based scanning** ensures quick and **contactless** verification.</li>
+                    <li>**Admin-controlled QR generation** prevents unauthorized access.</li>
+                    <li>**University email verification** blocks non-students.</li>
+                    <li>**Real-time logs** enhance security and tracking.</li>
                 </ul>
 
                 

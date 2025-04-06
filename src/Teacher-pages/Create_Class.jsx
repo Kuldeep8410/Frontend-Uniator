@@ -76,77 +76,79 @@ function Create_class() {
 
   return (
     <div className="text-white relative h-auto">
-      <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 w-4/5">
-        <div className="flex flex-col md:flex-row justify-center gap-4">
-          <span>
+      <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mx-auto">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
+          <span className="flex flex-col w-full">
             <label>Course Code</label>
             <input
               type="text"
               name="courseCode"
               value={courseData.courseCode}
               onChange={handleChange}
-              className="border rounded p-1"
+              className="border rounded p-2 mt-1"
               required
             />
           </span>
-          <span>
+          <span className="flex flex-col w-full">
             <label>Course Name</label>
             <input
               type="text"
               name="courseName"
               value={courseData.courseName}
               onChange={handleChange}
-              className="border rounded p-1"
+              className="border rounded p-2 mt-1"
               required
             />
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-4">
-          <span>
+        <div className="flex flex-col md:flex-row justify-between gap-4">
+          <span className="flex flex-col w-full">
             <label>Expiry On</label>
             <input
               type="date"
               name="enddate"
               value={courseData.enddate}
               onChange={handleChange}
-              className="border rounded p-1"
+              className="border rounded p-2 mt-1"
               required
             />
           </span>
-          <span>
+          <span className="flex flex-col w-full">
             <label>Allow From</label>
             <input
               type="text"
               name="startEntry"
               value={courseData.startEntry}
               onChange={handleChange}
-              className="border rounded p-1"
+              className="border rounded p-2 mt-1"
               required
             />
           </span>
-          <span>
+          <span className="flex flex-col w-full">
             <label>To</label>
             <input
               type="text"
               name="endEntry"
               value={courseData.endEntry}
               onChange={handleChange}
-              className="border rounded p-1"
+              className="border rounded p-2 mt-1"
               required
             />
           </span>
         </div>
 
-        <label>Teacher Name</label>
-        <input
-          type="text"
-          name="Teacher"
-          value={courseData.Teacher}
-          onChange={handleChange}
-          className="border rounded p-1"
-          required
-        />
+        <div className="flex flex-col w-full">
+          <label>Teacher Name</label>
+          <input
+            type="text"
+            name="Teacher"
+            value={courseData.Teacher}
+            onChange={handleChange}
+            className="border rounded p-2 mt-1"
+            required
+          />
+        </div>
 
         <div className="flex items-center gap-2">
           <label>Is Active?</label>
@@ -158,14 +160,14 @@ function Create_class() {
           />
         </div>
 
-        <div className="flex items-center gap-2 text-white bg-black">
+        <div className="flex flex-col w-full gap-2">
           <label htmlFor="department">School Of</label>
           <select
             id="department"
             name="Department"
             value={courseData.Department}
             onChange={handleChange}
-            className="flex border rounded px-2 py-1 items-center gap-2 text-white bg-black"
+            className="border rounded px-3 py-2 mt-1 text-white bg-black"
           >
             <option value="">Select An Option</option>
             <option value="CSE">Computer Science & Engineering</option>
@@ -181,31 +183,30 @@ function Create_class() {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 mt-4"
         >
-          {loading ? ("Creating ......") : ("Create A Class")}
+          {loading ? "Creating ......" : "Create A Class"}
         </button>
       </form>
 
       {res && (
         <h1
-          className={`${
-            res.success ? "bg-green-500" : "bg-red-500"
-          } rounded p-2 w-1/6 font-bold text-black`}
+          className={`${res.success ? "bg-green-500" : "bg-red-500"
+            } rounded p-2 w-full sm:w-1/3 mx-auto mt-4 font-bold text-black text-center`}
         >
           {res.message}
         </h1>
       )}
-     
-       {!isDepartment && (<h1
-          className="rounded p-2 w-1/6 font-bold text-black bg-red-600"
-        >ou are not authorized to create a course in this department.
-          
-        </h1>)}
-     
+
+      {!isDepartment && (
+        <h1 className="rounded p-2 w-full sm:w-1/3 mx-auto mt-4 font-bold text-black bg-red-600 text-center">
+          You are not authorized to create a course in this department.
+        </h1>
+      )}
 
       <ToastContainer />
     </div>
+
   );
 }
 

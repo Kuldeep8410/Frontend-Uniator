@@ -25,22 +25,22 @@ function AttendanceMarking() {
                 <h3 className="text-xl font-semibold mt-4">2. How the Attendance System Works</h3>
                 <img src={imag2} alt="Wrong QR Code Scan" className="w-full h-auto mt-4 rounded-lg" />
 
-                <h4 className="text-lg font-semibold mt-2">📌 Attendance Activation by Teacher</h4>
+                <h4 className="text-lg font-semibold mt-2">Attendance Activation by Teacher</h4>
                 <p className="text-gray-300 text-sm mt-2 mb-2">
                     The teacher starts an attendance session, enabling students to mark their presence.
                 </p>
 
-                <h4 className="text-lg font-semibold mt-2">📌 Marking Present or Absent</h4>
+                <h4 className="text-lg font-semibold mt-2">Marking Present or Absent</h4>
                 <p className="text-gray-300 text-sm mt-2 mb-2">
                     Students can mark themselves as **Present** or **Absent** once the attendance session is active.
                 </p>
 
-                <h4 className="text-lg font-semibold mt-2">📌 Linking to Course & Date</h4>
+                <h4 className="text-lg font-semibold mt-2">Linking to Course & Date</h4>
                 <p className="text-gray-300 text-sm mt-2 mb-2">
                     Attendance records are linked to a **specific course** and **date**, ensuring accurate tracking.
                 </p>
 
-                <h4 className="text-lg font-semibold mt-2">📌 Checking if Attendance Exists</h4>
+                <h4 className="text-lg font-semibold mt-2">Checking if Attendance Exists</h4>
                 <p className="text-gray-300 text-sm mt-2 mb-2">
                     Before marking attendance, the system checks if the student has already been recorded to prevent duplicates.
                 </p>
@@ -63,10 +63,10 @@ function AttendanceMarking() {
                 {/* Benefits of the System */}
                 <h3 className="text-xl font-semibold mt-6">4. Benefits of the Attendance System</h3>
                 <ul className="list-disc list-inside text-gray-300">
-                    <li>✅ Prevents false entries</li>
-                    <li>✅ Helps track student participation</li>
-                    <li>✅ Can be integrated with grading systems</li>
-                    <li>✅ Saves time for teachers</li>
+                    <li>Prevents false entries</li>
+                    <li>Helps track student participation</li>
+                    <li>Can be integrated with grading systems</li>
+                    <li>Saves time for teachers</li>
                 </ul>
 
                 

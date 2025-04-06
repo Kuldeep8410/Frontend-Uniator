@@ -25,60 +25,54 @@ function AdminHome() {
 
     return (
         <div className="flex flex-col bg-black">
-            <div className="mt-20 flex flex-col relative bg-black items-center justify-center md:p-5 p-10 text-white">
-                <h1 className=" text-3xl text-white font-bold"> <span className="text-3xl text-red-500 font-bold">Welcome !</span> to
-                    <span className="text-3xl text-yellow-300 font-bold"> Teacher Dashbord </span>
-                    Ultimate Class Managing Web-App</h1>
-                <br></br>
-                <h1 className="text-2xl text-white font-bold">
-                    Your <span className="text-2xl text-red-500 font-bold">Ultimate</span> Classess Manage Hub!
+            <div className="mt-20 flex flex-col relative bg-black items-center justify-center p-5 text-white md:px-10 sm:px-5">
+                <h1 className="text-3xl text-white font-bold text-center">
+                    <span className="text-3xl text-red-500 font-bold">Welcome !</span> to
+                    <span className="text-3xl text-yellow-300 font-bold"> Teacher Dashboard </span>
+                    Ultimate Class Managing Web-App
                 </h1>
-                <div className="flex items-center md:ml-50 md:mr-50">
-                    <p className="text-gray-400 p-10 items-center">Welcome to <span className="text-2xl text-yellow-300">Uniator</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. making it an all-in-one students, and organizations.</p>
+                <br />
+                <h1 className="text-2xl text-white font-bold text-center">
+                    Your <span className="text-2xl text-red-500 font-bold">Ultimate</span> Classes Manage Hub!
+                </h1>
+                <div className="flex items-center justify-center p-5">
+                    <p className="text-gray-400 text-center sm:text-base md:text-lg lg:text-xl">
+                        Welcome to <span className="text-2xl text-yellow-300">Uniator</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. Making it an all-in-one solution for students and organizations.
+                    </p>
                 </div>
             </div>
 
-
-            <div className="flex flex-col sm:flex-row relative z-0 rounded-2xl gap-2 px-20 py-10 bg-black ">
+            <div className="flex flex-col sm:flex-row relative z-0 rounded-2xl gap-4 px-5 sm:px-10 py-10 bg-black">
                 {/* Sidebar with Multiple Buttons */}
-                <div className="sm:w-1/5 sm:flex-row bg-white/10 sm:h-screen rounded-2xl h-[400px] p-2 relative">
+                <div className="sm:w-1/5 w-full bg-white/10 sm:h-screen rounded-2xl p-4">
                     <AdminPro />
-                    <button onClick={() => handleButtonClick("All_Class")} className="border-2 border-cyan-500 rounded-2xl text-white p-2  m-2 w-9/10">
+                    <button onClick={() => handleButtonClick("All_Class")} className="border-2 border-cyan-500 rounded-2xl text-white p-3 m-2 w-full">
                         All Classes
                     </button>
-                    <button onClick={() => handleButtonClick("Create_Class")} className="border-2 border-cyan-500 rounded-2xl text-white p-2  m-2 w-9/10">
-                        Create class
+                    <button onClick={() => handleButtonClick("Create_Class")} className="border-2 border-cyan-500 rounded-2xl text-white p-3 m-2 w-full">
+                        Create Class
                     </button>
-
-
-                    <button onClick={() => handleButtonClick("Attendance")} className="border-2 border-cyan-500 rounded-2xl text-white p-2  m-2 w-9/10">
+                    <button onClick={() => handleButtonClick("Attendance")} className="border-2 border-cyan-500 rounded-2xl text-white p-3 m-2 w-full">
                         Attendance Details
                     </button>
-
-                    <button onClick={() => handleButtonClick("setlocation")} className="border-2 border-cyan-500 rounded-2xl text-white p-2  m-2 w-9/10">
+                    <button onClick={() => handleButtonClick("setlocation")} className="border-2 border-cyan-500 rounded-2xl text-white p-3 m-2 w-full">
                         Set Location & Radius
                     </button>
-
-
                 </div>
 
                 {/* Main Content */}
-                <div className="sm:w-4/5 w-1/1 bg-white/10 sm:h-screen rounded-2xl p-2">
+                <div className="sm:w-4/5 w-full bg-white/10 sm:h-screen rounded-2xl p-4">
                     {selectedButton === "All_Class" && <All_Class_adm />}
-
                     {selectedButton === "Create_Class" && <Create_class />}
-
                     {selectedButton === "Attendance" && <Attendance />}
-
                     {selectedButton === "setlocation" && <SetLocation />}
-
-
 
                     {/* Default Content when no button is clicked */}
                     {!selectedButton && <h1 className="text-white text-2xl">Select an option from the sidebar</h1>}
                 </div>
             </div>
         </div>
+
     );
 }
 

@@ -4,27 +4,27 @@ export default function GridCards() {
       title: "Know how Qr works",
       description: "Boost your DSA skills with our handy cheat sheets.",
       icon: "📄",
-      url: "KnowQr-WORKING",
+      url: "Qr-working-docs",
     },
     {
       title: "Attendace Marking Student",
       description:
         "student will able to mark their attendance and keep track of percentage of attendance they have in each subject",
       icon: "🏗️",
-      url: "KnowAttendanceMarking"
+      url: "attendace-marking-docs"
     },
     {
       title: "Class Create Teacher",
       description:
         "For faculty ame easy for Attendance taking and managing a class room, teacher can create class.",
       icon: "✍️",
-      url: "classCreateTeacher",
+      url: "class-creating-docs",
     },
     {
       title: "GatePass Working",
       description: "How Entry exit system works at Gate.",
       icon: "▶️",
-      url: "gatePassWorking",
+      url: "gatepss-working-docs",
     },
     {
       title: "Code Collabrotor",

@@ -29,17 +29,17 @@ function QrWorking() {
 
                 <h3 className="text-xl font-semibold mt-4">2. How QR Codes Work</h3>
 
-                <h4 className="text-lg font-semibold mt-2">📌 Encoding Information</h4>
+                <h4 className="text-lg font-semibold mt-2">Encoding Information</h4>
                 <p className="text-gray-300 text-sm mt-2 mb-2">
                     QR codes encode data in a two-dimensional format using black and white squares.
                 </p>
 
-                <h4 className="text-lg font-semibold mt-2">📌 QR Code Structure</h4>
+                <h4 className="text-lg font-semibold mt-2">QR Code Structure</h4>
                 <p className="text-gray-300 text-sm mt-2 mb-2">
                     A QR code consists of position markers, alignment patterns, timing patterns, and data modules.
                 </p>
 
-                <h4 className="text-lg font-semibold mt-2">📌 Scanning Process</h4>
+                <h4 className="text-lg font-semibold mt-2">Scanning Process</h4>
                 <p className="text-gray-300 text-sm mt-2 mb-2">
                     When a scanner detects a QR code, it deciphers the data using pattern recognition.
                 </p>
