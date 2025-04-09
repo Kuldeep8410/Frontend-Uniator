@@ -35,7 +35,7 @@ function LandingPage() {
  {/* Welcome Section */}
  <div className="flex flex-col items-center text-center px-4 md:px-20">
                 <h1 className="text-white text-3xl md:text-6xl font-bold p-10">
-                    <span className="text-gray-300">Welcome!</span> to 
+                    <span className="text-pink-600">Welcome!</span> to 
                     <span className="text-yellow-400 font-bold"> Uniator</span>
                 </h1>
                 <p className="text-gray-400 text-lg max-w-4xl leading-relaxed">

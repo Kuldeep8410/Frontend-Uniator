@@ -179,11 +179,11 @@ function Normaluser() {
             </p>
 
             {/* Google Signup */}
-            <div className="flex items-center justify-center mt-4">
+            {/* <div className="flex items-center justify-center mt-4">
                 <span className="flex flex-row gap-2 border-2 border-blue-700 rounded-md px-4 py-2 text-blue-700 hover:bg-blue-700 hover:text-white cursor-pointer">
                     <FcGoogle size={24} /> <LoginButton />
                 </span>
-            </div>
+            </div> */}
         </form>
   }
         <ToastContainer />
