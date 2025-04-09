@@ -111,11 +111,11 @@ function Login() {
                             </button>
 
                             {/* Google Login */}
-                            <span
+                            {/* <span
                                 className="w-full flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md cursor-pointer transition-all hover:scale-105"
                             >
                                 <FcGoogle size={24} /> <h2>{<LoginButton />}</h2>
-                            </span>
+                            </span> */}
                         </div>
                     </form>
                 </div>
