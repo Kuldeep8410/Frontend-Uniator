@@ -36,10 +36,10 @@ function LandingPage() {
  <div className="flex flex-col items-center text-center px-4 md:px-20">
                 <h1 className="text-white text-3xl md:text-6xl font-bold p-10">
                     <span className="text-gray-300">Welcome!</span> to 
-                    <span className="text-teal-400 font-bold"> Uniator</span>
+                    <span className="text-yellow-400 font-bold"> Uniator</span>
                 </h1>
                 <p className="text-gray-400 text-lg max-w-4xl leading-relaxed">
-                    A versatile web platform integrating <span className="text-teal-300">real-time code collaboration</span>, 
+                    A versatile web platform integrating <span className="text-yellow-400">real-time code collaboration</span>, 
                     a secure gate pass system with QR scanning, an <span className="text-pink-600">attendance tracker</span>, 
                     an <span className="text-green-500">advanced to-do list</span> with backend support, and a 
                     <span className="text-blue-400"> community discussion</span> forum. It streamlines workflow, 

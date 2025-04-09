@@ -97,12 +97,6 @@ function UserHome() {
         para: "UpComin feature, working on it",
         name: "Disabled"
     }
-    const logout = {
-        url: '/logout',
-        head: 'Logout',
-        para: "want to logout ?",
-        name: "logout"
-    }
 
 
     const AvailableClasses = {
@@ -148,8 +142,6 @@ function UserHome() {
                 <div className="left-div flex flex-col w-full md:w-1/5 bg-white/15 border-2 pl-1 pr-4 pt-5 rounded-2xl relative gap-5 md:h-screen">
                     <UserProfile props={userInfo} />
                     <LeftDivComp props={leftEditor} />
-                    <LeftDivComp props={userInfo} />
-                    <LeftDivComp props={logout} />
                 </div>
 
                 {/* Middle Section */}
@@ -178,7 +170,7 @@ function UserHome() {
                 <div className="right-div bg-white/10 w-full md:w-1/5 p-4 rounded-2xl relative md:h-screen">
                     <Todo_Page />
                     <CommunityForum />
-                    <RightDivComp props={userInfo} />
+                    {/* <RightDivComp props={userInfo} /> */}
                 </div>
 
             </div>
