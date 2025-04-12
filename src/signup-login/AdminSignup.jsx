@@ -147,7 +147,7 @@ function Adminuser() {
             type="submit"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md mt-6 font-semibold transition-all hover:scale-105"
           >
-            Sign Up
+             {loading ? ("Signing...") : ("Sign Up")}
           </button>
         </form>
       </div>

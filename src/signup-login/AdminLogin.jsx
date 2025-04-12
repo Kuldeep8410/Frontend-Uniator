@@ -90,7 +90,7 @@ function AdminLogin() {
                     type="submit" 
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md mt-6 font-semibold transition-all hover:scale-105"
                 >
-                    Login
+                     {loading ? ("Loging...") : ("Login")}
                 </button>
             </form>
         </div>

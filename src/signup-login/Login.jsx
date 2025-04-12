@@ -105,7 +105,7 @@ function Login() {
                     type="submit" 
                     className="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-md font-semibold transition-all hover:scale-105"
                 >
-                    Login
+                    {loading ? ("Loging...") : ("Login")}
                 </button>
 
                 {/* Google Login */}

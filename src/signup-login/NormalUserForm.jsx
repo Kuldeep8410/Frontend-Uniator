@@ -125,7 +125,7 @@ function Normaluser() {
                         type="submit"
                         className="w-full bg-gradient-to-r from-blue-600 to-violet-700 hover:from-violet-700 hover:to-blue-600 py-2 rounded-md font-semibold shadow-md transition-all duration-200"
                     >
-                        Sign Up
+                        {loading ? ("Signing...") : ("Sign Up")}
                     </button>
 
                     <div className="text-center text-sm text-white/70">
