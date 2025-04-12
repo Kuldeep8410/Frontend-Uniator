@@ -10,12 +10,18 @@ import Pop_up from "./Pop_up";
 
 function LandingPage() {
     const [popup, setPopup] = useState(false);
+
+    const data = localStorage.getItem("UserData")
     
     useEffect(() => {
         console.log("set timeout start hone wala hai")
-        setTimeout(() => {
-            setPopup(true);
-        }, 3000)
+        if(!data){
+            setTimeout(() => {
+                setPopup(true);
+            }, 3000)
+
+        }
+        
 
     }, [])
 
