@@ -35,6 +35,13 @@ function Normaluser() {
         role: NormaluserData.role
     };
 
+    if (NormaluserData && NormaluserData.email) {
+        localStorage.setItem("useremail", NormaluserData.email);
+        // console.log("New object stored in localStorage:", NormaluserData.email);
+      } else {
+        console.log("Error: Email is missing in NormaluserData");
+      }
+
     const submitHandler = async (e) => {
         e.preventDefault();
         if (NormaluserData.password !== NormaluserData.confirmpass) {
