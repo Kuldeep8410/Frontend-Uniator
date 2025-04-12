@@ -16,7 +16,6 @@ function Login() {
     const navigate = useNavigate();
 
     const [NormaluserData, setNormalUserData] = useState({
-        username: "",
         email: "",
         password: "",
     });
@@ -66,17 +65,6 @@ function Login() {
                 User Login
             </h1>
 
-            {/* Name Field */}
-            <label htmlFor="name" className="mt-4 text-gray-300">User Name</label>
-            <input
-                type="text"
-                id="name"
-                name="username"
-                value={NormaluserData.username}
-                onChange={changeHandler}
-                required
-                className="w-full px-4 py-2 mt-1 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-cyan-500 outline-none"
-            />
 
             {/* Email Field */}
             <label htmlFor="email" className="mt-4 text-gray-300">Email</label>
