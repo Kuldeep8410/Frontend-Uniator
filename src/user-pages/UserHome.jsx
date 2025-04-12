@@ -92,16 +92,22 @@ function UserHome() {
 
     // which data to be displayed 
     const leftEditor = {
-        url: "#",
+        url: "/all-classes-student",
         head: "Monaic code",
-        para: "UpComin feature, working on it",
-        name: "Disabled"
+        para: "vs-code code editor try to use for real time collbroation in code",
+        name: "Go To All"
+    }
+    const logout = {
+        url: '/logout',
+        head: 'Logout',
+        para: "want to logout ?",
+        name: "logout"
     }
 
 
     const AvailableClasses = {
         url: "/all-classes",
-        head: "All Classess",
+        head: "All Available",
         name: "Go To All"
     }
     const attendance = {
@@ -112,14 +118,14 @@ function UserHome() {
 
     const QRComponent = {
         url: "/qrscanner",
-        head: "Gate-1/Gate-2 Entries",
+        head: "G1/G2 Entries",
         name: "Scan Qr"
     }
 
 
 
     return (
-        <div className="flex flex-col ">
+        <div className="flex flex-col">
 
             <div className="flex flex-col relative bg-black items-center justify-center md:p-5 p-10 text-white">
                 <h1 className=" text-3xl text-white font-bold"> <span className="text-3xl text-red-500 font-bold">Hello !</span>
@@ -142,6 +148,8 @@ function UserHome() {
                 <div className="left-div flex flex-col w-full md:w-1/5 bg-white/15 border-2 pl-1 pr-4 pt-5 rounded-2xl relative gap-5 md:h-screen">
                     <UserProfile props={userInfo} />
                     <LeftDivComp props={leftEditor} />
+                    <LeftDivComp props={userInfo} />
+                    <LeftDivComp props={logout} />
                 </div>
 
                 {/* Middle Section */}
@@ -170,14 +178,13 @@ function UserHome() {
                 <div className="right-div bg-white/10 w-full md:w-1/5 p-4 rounded-2xl relative md:h-screen">
                     <Todo_Page />
                     <CommunityForum />
-                    {/* <RightDivComp props={userInfo} /> */}
+                    <RightDivComp props={userInfo} />
                 </div>
 
             </div>
-            ̰
+
         </div>
 
     )
 }
 export default UserHome;
-

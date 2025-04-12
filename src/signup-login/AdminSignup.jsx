@@ -54,7 +54,7 @@ function Adminuser() {
     if (response.success) {
       toast.success(response.message);
       setTimeout(() => {
-        navigate('/otpvarification')
+        navigate('/admin-login')
       }, 1000)
     }
     if (!response.success) toast.error(response.message)
@@ -66,12 +66,12 @@ function Adminuser() {
 
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 px-4">
-      <div className="w-full max-w-lg bg-gray-800/50 backdrop-blur-lg shadow-lg rounded-lg p-6 md:p-8">
+    <div className="flex justify-center items-center min-h-screen  px-4">
+      <div className="w-full max-w-lg backdrop-blur-lg shadow-lg rounded-lg p-6 md:p-8">
         <form className="flex flex-col" onSubmit={submitHandler}>
           {/* Title */}
           <h1 className="text-2xl font-semibold text-blue-400 border-b-2 pb-2 text-center">
-            Teacher Signup
+            Admin Signup
           </h1>
 
           {/* Name Field */}
@@ -99,7 +99,7 @@ function Adminuser() {
           />
 
           {/* Faculty Dropdown */}
-          <label htmlFor="facultyof" className="mt-4 text-gray-300">Faculty Of</label>
+          <label htmlFor="FuckltyOf" className="mt-4 text-gray-300">Faculty Of</label>
           <select
             id="FuckltyOf"
             name="FuckltyOf"
