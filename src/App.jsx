@@ -126,6 +126,8 @@ function App() {
             <Route path="/all-posts" element={<FetchAllPost />} />
             <Route path="/posts/detail/:id" element = {<PostDetail />} />
 
+            <Route path="/signup" element={<Signup />} />
+
 
           </Routes>
 

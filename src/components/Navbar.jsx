@@ -1,19 +1,21 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; 
+import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import Logout from "./Logout";
 import { useAuth0 } from "@auth0/auth0-react";
 
+import smvDeX from '../assets/SMVDex.png'
+
 const Navbar = () => {
-  const { isAuthenticated } = useAuth0();  
+  const { isAuthenticated } = useAuth0();
   const [isOpen, setIsOpen] = useState(false);
-//
+  //
   const localData = localStorage.getItem("UserData");
   let data = localData ? JSON.parse(localData) : {}; // Ensure `data` is an object
-   
-  console.log("local data",data)
-  console.log("success res",data.success)
-  console.log("data type", typeof(data.success))
+
+  console.log("local data", data)
+  console.log("success res", data.success)
+  console.log("data type", typeof (data.success))
   // Ensure `data.success` is always a boolean
   if (typeof data.success !== "boolean") {
     data.success = false;
@@ -24,9 +26,16 @@ const Navbar = () => {
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <span className="bg-gradient-to-tl from-yellow-500 to-red-600 bg-clip-text text-transparent text-3xl opacity-80 font-bold font-mono p-2 rounded-2xl">
-            <NavLink to="/">Uniator</NavLink>
+          <span className="p-2 rounded-2xl">
+            <NavLink to="/">
+              <img
+                src={smvDeX}
+                alt="Logo"
+                className="h-50 w-auto object-contain" // 👈 height fix, width auto
+              />
+            </NavLink>
           </span>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-5 bg-gradient-to-br from-yellow-500 to-red-600 bg-clip-text text-transparent text-lg font-bold">
@@ -43,8 +52,8 @@ const Navbar = () => {
             )}
           </div>
 
-          <button 
-            className="md:hidden text-white text-2xl focus:outline-none" 
+          <button
+            className="md:hidden text-white text-2xl focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
