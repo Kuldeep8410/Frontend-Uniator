@@ -136,7 +136,7 @@ function UserHome() {
                     Your <span className="text-2xl text-red-500 font-bold">Ultimate</span> Utilty Hub!
                 </h1>
                 <div className="flex items-center md:ml-50 md:mr-50">
-                    <p className="text-gray-400 p-10 items-center">Welcome to <span className="text-2xl text-yellow-300">Uniator</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. making it an all-in-one students, and organizations.</p>
+                    <p className="text-gray-400 p-10 items-center">Welcome to <span className="text-2xl text-yellow-300">smvDeX</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. making it an all-in-one students, and organizations.</p>
                 </div>
             </div>
 

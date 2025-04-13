@@ -34,7 +34,7 @@ function CommunityNavbar({ fun }) {
             {/* Left Most div */}
             <div className=" flex w-1/1 justify-between border-b border-gray-400">
                 <div className="relative flex justify-center items-center gap-1 m-2 p-1 text-2xl">
-                    Uniator
+                    smvDeX
                 </div>
 
                 {/* Middle div  Search */}

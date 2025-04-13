@@ -37,7 +37,7 @@ function AdminHome() {
                 </h1>
                 <div className="flex items-center justify-center p-5">
                     <p className="text-gray-400 text-center sm:text-base md:text-lg lg:text-xl">
-                        Welcome to <span className="text-2xl text-yellow-300">Uniator</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. Making it an all-in-one solution for students and organizations.
+                        Welcome to <span className="text-2xl text-yellow-300">smvDeX</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. Making it an all-in-one solution for students and organizations.
                     </p>
                 </div>
             </div>

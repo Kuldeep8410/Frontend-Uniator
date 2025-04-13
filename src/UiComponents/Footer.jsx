@@ -21,7 +21,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="text-center mt-4">
-            © {new Date().getFullYear()} Uniator
+            © {new Date().getFullYear()} smvDeX
           </div>
         </div>
       </footer>
