@@ -6,6 +6,8 @@ import Connects from "./Connects";
 import GridCards from "./GridLayout";
 import { useEffect, useState } from "react";
 import Pop_up from "./Pop_up";
+import CollaborativeEditorLanding from "./part2";
+
 
 
 function LandingPage() {
@@ -66,6 +68,7 @@ function LandingPage() {
 
             <h1 className="text-white text-5xl mt-20 font-bold antialiased">Feature's At This Application</h1>
             <GridCards />
+            <CollaborativeEditorLanding />
             <Signup />
             <Connects />
         </div>
