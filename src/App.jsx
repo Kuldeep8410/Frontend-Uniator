@@ -84,7 +84,7 @@ function App() {
               <Route path='/admin-dashboard' element={<AdminHome />} />
               <Route path="/create-class" element={<Create_class />} />
               <Route path="/all-classes-adm" element={<All_Class_adm />} />
-{/*                 <Route path="/admin-noti" element={<NotificationManager />} /> */}
+                <Route path="/admin-noti" element={<NotificationManager />} />
 
 
             </Route>
