@@ -48,7 +48,7 @@ import UpdateProfile from './user-profile/edit-user-profile';
 import ThemeSelector from "./themectrl";
 import ThemeChanger from './themectrl'
 import Chat from "./Chat";
-// import NotificationManager from "./Teacher-pages/addnotification";
+import NotificationManager from "./Teacher-pages/addnotification";
 
 
 
@@ -143,7 +143,7 @@ function App() {
             <Route path="User-profile" element={<UserProfile />} />
             <Route path="Update" element={<UpdateProfile />} />
             <Route path="chat" element = {<Chat />} />
-{/*              <Route path="notification" element = {<NotificationManager />} /> */}
+             <Route path="notification" element = {<NotificationManager />} />
 
           </Routes>
 
