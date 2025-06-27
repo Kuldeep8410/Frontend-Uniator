@@ -48,6 +48,8 @@ import UpdateProfile from './user-profile/edit-user-profile';
 import ThemeSelector from "./themectrl";
 import ThemeChanger from './themectrl'
 import Chat from "./Chat";
+import NotificationManager from "./Teacher-pages/addnotification";
+
 
 
 
@@ -82,6 +84,7 @@ function App() {
               <Route path='/admin-dashboard' element={<AdminHome />} />
               <Route path="/create-class" element={<Create_class />} />
               <Route path="/all-classes-adm" element={<All_Class_adm />} />
+                <Route path="/admin-noti" element={<NotificationManager />} />
 
 
             </Route>
