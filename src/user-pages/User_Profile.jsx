@@ -1,6 +1,6 @@
-import ContributionGraph from "../test/Contri";
-import ProfileLeft from "../test/profile_left";
-import RightPart from "../test/RightPart";
+import ContributionGraph from "../user-profile/Contri";
+import ProfileLeft from "../user-profile/profile_left";
+import RightPart from "../user-profile/RightPart";
 
 
 
