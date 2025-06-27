@@ -6,7 +6,7 @@ function Chat() {
     const ws = useRef(null);
 
     useEffect(() => {
-        ws.current = new WebSocket('ws://localhost:3000');
+ws.current = new WebSocket('wss://uniator-backend.onrender.com');
 
         ws.current.onopen = () => console.log(' WebSocket connected');
 
