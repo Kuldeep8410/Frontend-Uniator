@@ -15,7 +15,7 @@ function NotificationStd({courseCode}) {
     const [showNotifications, setShowNotifications] = useState(false);
     const [error, setError] = useState("");
 
-    const url = "http://localhost:3000/mern-revision/v1/notification";
+    const url = "https://uniator-backend.onrender.com/mern-revision/v1/notification";
 
     // Load notifications on mount
     useEffect(() => {
