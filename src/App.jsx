@@ -158,7 +158,6 @@ function App() {
             {/* <a href="/upload">Image Upload</a> */}
             <a href="/administrator">Adminstrator Dashboard</a>
             <a href="/administrator-login">Administrator Login</a>
-            <ThemeChanger />
           </div>
           <Footer />
         </div>
