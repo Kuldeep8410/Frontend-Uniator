@@ -143,6 +143,7 @@ function App() {
             <Route path="User-profile" element={<UserProfile />} />
             <Route path="Update" element={<UpdateProfile />} />
             <Route path="chat" element = {<Chat />} />
+             <Route path="notification" element = {<NotificationManager />} />
 
           </Routes>
 
