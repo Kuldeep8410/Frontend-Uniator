@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
-import ProfileLeft from "./profile_left";
-import RightPart from "./RightPart";
 
 const ContributionGraph = ({ activity }) => {
     const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
