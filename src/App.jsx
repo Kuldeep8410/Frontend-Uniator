@@ -43,18 +43,26 @@ import SetLocation from "./Teacher-pages/SetLoaction";
 import VarifyLocation from "./user-pages/VarifiyLocation";
 import FetchAllPost from "./Discusion/FetchAllPost";
 import PostDetail from "./Discusion/PostDetails";
+import UserProfile from "./user-pages/User_Profile";
+import UpdateProfile from './user-profile/edit-user-profile';
+import ThemeSelector from "./themectrl";
+import ThemeChanger from './themectrl'
+import Chat from "./Chat";
+
+
 
 
 
 function App() {
   return (
     <BrowserRouter> {/* ✅ Wrap everything inside BrowserRouter */}
+      {/* <ThemeSelector /> */}
       <>
         <div className='fixed top-0 z-20 w-full'>
           <Navbar />
         </div>
 
-        <div className='w-full h-screen bg-black/90 mt-16'>
+        <div className='w-full h-screen bg-base-100/90 mt-16'>
 
 
           <Routes>
@@ -74,8 +82,8 @@ function App() {
               <Route path='/admin-dashboard' element={<AdminHome />} />
               <Route path="/create-class" element={<Create_class />} />
               <Route path="/all-classes-adm" element={<All_Class_adm />} />
-              
-             
+
+
             </Route>
 
 
@@ -83,7 +91,7 @@ function App() {
             <Route element={<StudentAuthorise />}>
               <Route path="/user-home" element={<UserHome />} />
               <Route path="/todo-home" element={<TodoHome />} />
-              
+
               <Route path="/qrscanner" element={<Qr_res />} />
               <Route path="/discussion" element={<HomeDiscussion />} />
               <Route path="/discussion/makepost" element={<MakePost />} />
@@ -91,11 +99,11 @@ function App() {
             </Route>
 
 
-{/* Documentation of project */}
+            {/* Documentation of project */}
             <Route path="/Qr-working-docs" element={<QrWorking />} />
-            <Route path= "/attendace-marking-docs" element = {<AttendanceMarking />} />
-            <Route path="/class-creating-docs" element = {<ClassCreate />} />
-            <Route path="/gatepss-working-docs" element = {<GatePassWorking />} />
+            <Route path="/attendace-marking-docs" element={<AttendanceMarking />} />
+            <Route path="/class-creating-docs" element={<ClassCreate />} />
+            <Route path="/gatepss-working-docs" element={<GatePassWorking />} />
 
 
 
@@ -106,7 +114,7 @@ function App() {
             <Route path="/all-classes-student" element={<All_Class_Std />} />
 
 
-{/* Dynamic route for each course sending details with query params */}
+            {/* Dynamic route for each course sending details with query params */}
             <Route path="/all-classes-student/:courseCode/:courseName/:Teacher" element={<ClassDetailParticular />} />
 
             <Route path="/otpvarification" element={<Otpvarifiacation />} />
@@ -119,21 +127,27 @@ function App() {
             <Route path='/admin-login' element={<AdminLogin />} />
             <Route path="/administrator-login" element={<SUlogin />} />
 
-            <Route path="/makepost"element = {<MakePost />} />
+            <Route path="/makepost" element={<MakePost />} />
 
-            <Route path="/setlocation" element = {<SetLocation />} />
-            <Route path= "/varifylocaation/:_id" element = {<VarifyLocation />} />
+            <Route path="/setlocation" element={<SetLocation />} />
+            <Route path="/varifylocaation/:_id" element={<VarifyLocation />} />
             <Route path="/all-posts" element={<FetchAllPost />} />
-            <Route path="/posts/detail/:id" element = {<PostDetail />} />
+            <Route path="/posts/detail/:id" element={<PostDetail />} />
 
             <Route path="/signup" element={<Signup />} />
 
+            {/* testing routers latere they are authorise */}
+            <Route path="User-profile" element={<UserProfile />} />
+            <Route path="Update" element={<UpdateProfile />} />
+            <Route path="chat" element = {<Chat />} />
 
           </Routes>
 
 
+
+
           {/* <HashLoader color='green' /> */}
-          <div className="grid grid-cols-3 text-xl text-white bg-black z-20 p-5 ">
+          <div className="grid grid-cols-3 text-xl text-white bg-base-100 z-20 p-5 ">
             {/* <a href="/otpvarification">otpvarification</a> */}
             {/* <a href="/qrscanner">qrscanner</a> */}
             {/* <a href="/qrgenerator">qrgenerator</a> */}
@@ -144,6 +158,7 @@ function App() {
             {/* <a href="/upload">Image Upload</a> */}
             <a href="/administrator">Adminstrator Dashboard</a>
             <a href="/administrator-login">Administrator Login</a>
+            <ThemeChanger />
           </div>
           <Footer />
         </div>
@@ -151,6 +166,7 @@ function App() {
 
         <ToastContainer />
       </>
+
     </BrowserRouter>
   );
 }
