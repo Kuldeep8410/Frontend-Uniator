@@ -1,20 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../ContextApi/FisrtContext";
 import DeleteCourse from "./Delete_Class";
-
+import { Bell } from 'lucide-react';
 
 function ClassComponent({ course }) {
     const { PutRequets } = useContext(AppContext);
-    // console.log("porops aya kya ", course._id)
-    const [isStart, setStart] = useState(course.isActive);
+    console.log("porops aya kya ", course._id)
 
     if (!course.isActive) {
         console.log("hello ji")
     }
 
     async function AttendanceHandler() {
-        // console.log("Teacher for this course:", course);
-        setStart(!isStart)
+        console.log("Teacher for this course:", course);
 
         const newObj = {
             isActive: !course.isActive
@@ -22,7 +20,7 @@ function ClassComponent({ course }) {
 
         try {
             const response = await PutRequets(course._id, newObj, "toggleattendance");
-            // console.log("Updated course response:", response);
+            console.log("Updated course response:", response);
         } catch (error) {
             console.error("Error updating attendance:", error);
         }
@@ -30,9 +28,7 @@ function ClassComponent({ course }) {
 
 
     return (
-        
-       
-   <div className="flex flex-col text-white bg-base-100 w-full h-auto sm:max-w-[400px] sm:min-h-[320px] justify-between border border-blue-600 rounded-2xl m-2 p-4 shadow-md hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 ease-in-out">
+        <div className="flex flex-col text-white bg-base-100 w-full h-auto sm:max-w-[400px] sm:min-h-[320px] justify-between border border-blue-600 rounded-2xl m-2 p-4 shadow-md hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 ease-in-out">
 
             {/* Top Row */}
             <div className="flex justify-between items-center text-xs mb-2">
@@ -76,7 +72,7 @@ function ClassComponent({ course }) {
                 Start Attendance
             </button>
         </div>
-    
+
 
 
     )
