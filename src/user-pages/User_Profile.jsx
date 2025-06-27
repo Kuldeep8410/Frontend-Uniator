@@ -9,7 +9,7 @@ function UserProfile({ props }) {
 
 
     return (
-        <div className="flex-row">
+        <div className="flex-row h-auto">
 
             <div className="flex flex-col lg:flex-row gap-6 px-4 sm:px-6 md:px-10 lg:px-16 py-6">
                 {/* Left (Profile) */}
