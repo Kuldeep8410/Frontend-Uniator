@@ -25,22 +25,23 @@ function AdminHome() {
 
     return (
         <div className="flex flex-col bg-black">
-            <div className="mt-20 flex flex-col relative bg-black items-center justify-center p-5 text-white md:px-10 sm:px-5">
-                <h1 className="text-3xl text-white font-bold text-center">
-                    <span className="text-3xl text-red-500 font-bold">Welcome !</span> to
-                    <span className="text-3xl text-yellow-300 font-bold"> Teacher Dashboard </span>
-                    Ultimate Class Managing Web-App
-                </h1>
-                <br />
-                <h1 className="text-2xl text-white font-bold text-center">
-                    Your <span className="text-2xl text-red-500 font-bold">Ultimate</span> Classes Manage Hub!
-                </h1>
-                <div className="flex items-center justify-center p-5">
-                    <p className="text-gray-400 text-center sm:text-base md:text-lg lg:text-xl">
-                        Welcome to <span className="text-2xl text-yellow-300">smvDeX</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. Making it an all-in-one solution for students and organizations.
-                    </p>
+            <div className="mt-20 flex flex-col relative items-center justify-center p-5 text-white md:px-10 sm:px-5">
+                    <div className="backdrop-blur-sm bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl">
+                        <h1 className="text-3xl text-white font-bold text-center mb-4 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
+                            <span className="text-3xl bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent font-bold animate-pulse">Welcome !</span> to
+                            <span className="text-3xl bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-bold"> Teacher Dashboard </span>
+                            Ultimate Class Managing Web-App
+                        </h1>
+                        <h1 className="text-2xl text-white font-bold text-center mb-6">
+                            Your <span className="text-2xl bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent font-bold">Ultimate</span> Classes Manage Hub!
+                        </h1>
+                        <div className="flex items-center justify-center">
+                            <p className="text-gray-300 text-center sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl">
+                                Welcome to <span className="text-2xl bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">smvDeX</span>, A versatile web platform integrating real-time code collaboration, a secure gate pass system with QR scanning, an attendance tracker, an advanced to-do list with backend support, and a community discussion forum. Making it an all-in-one solution for students and organizations.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
             <div className="flex flex-col sm:flex-row relative z-0 rounded-2xl gap-4 px-5 sm:px-10 py-10 bg-black">
                 {/* Sidebar with Multiple Buttons */}
