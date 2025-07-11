@@ -42,10 +42,10 @@ const Navbar = () => {
               <NavLink to="/discussion" className="hover:text-white hover:border-b-2 border-blue-400">Community</NavLink>
             </div>
 
-            <div className="hidden md:block">
+            <div className=" md:block">
               <ThemeSelector />
             </div>
-            <div className="hidden md:block">
+            <div className=" md:block">
               <ProfileIcon />
             </div>
           </div>
