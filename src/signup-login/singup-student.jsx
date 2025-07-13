@@ -44,9 +44,9 @@ function SignupStudent() {
         }
 
         const response = await SendDataSignLogin('signup', SignUpData);
-
-        if (response.error) toast.error(response.error);
         console.log("reposne ", response)
+        if (response.error) toast.error(response.error);
+        
         else if (response.success) {
             toast.success(response.message);
             setTimeout(() => navigate("/otpvarification"), 1000);
