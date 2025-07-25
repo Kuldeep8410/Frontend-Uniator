@@ -167,7 +167,7 @@ function Create_class() {
             name="Department"
             value={courseData.Department}
             onChange={handleChange}
-            className="border rounded px-3 py-2 mt-1 text-white bg-black"
+            className="border rounded px-3 py-2 mt-1 text-white bg-base-100"
           >
             <option value="">Select An Option</option>
             <option value="CSE">Computer Science & Engineering</option>

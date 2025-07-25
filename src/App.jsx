@@ -54,7 +54,7 @@ function App() {
           <Navbar />
         </div>
 
-        <div className='w-full h-screen bg-black/90 mt-16'>
+        <div className='w-full h-screen bg-base-100/90 mt-16'>
 
 
           <Routes>
@@ -133,7 +133,7 @@ function App() {
 
 
           {/* <HashLoader color='green' /> */}
-          <div className="grid grid-cols-3 text-xl text-white bg-black z-20 p-5 ">
+          <div className="grid grid-cols-3 text-xl text-white bg-base-100 z-20 p-5 ">
             {/* <a href="/otpvarification">otpvarification</a> */}
             {/* <a href="/qrscanner">qrscanner</a> */}
             {/* <a href="/qrgenerator">qrgenerator</a> */}

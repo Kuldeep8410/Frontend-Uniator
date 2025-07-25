@@ -22,7 +22,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="sticky top-0 z-10 bg-black backdrop-blur-lg text-black font-medium">
+    <nav className="sticky top-0 z-10 bg-base-100 backdrop-blur-lg text-black font-medium">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -63,7 +63,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-black/5 text-white flex flex-col items-center space-y-4 py-4">
+        <div className="md:hidden bg-base-100/5 text-white flex flex-col items-center space-y-4 py-4">
           <NavLink to="/user-home" className="opacity-70 hover:opacity-100 hover:text-lg hover:font-bold">Dashboard</NavLink>
           {data.success || isAuthenticated ? (
             <Logout />
