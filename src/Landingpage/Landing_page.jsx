@@ -28,7 +28,7 @@ function LandingPage() {
     }, [])
 
     return (
-        <div className="relative flex flex-col bg-black content-center justify-center items-center h-auto">
+        <div className="relative flex flex-col bg-base-100 content-center justify-center items-center h-auto">
             <div className="flex flex-col justify-between items-center content-center">
                 <h1 className="text-white antialiased text-2xl sm:text-3xl md:text-5xl lg:text-6xl p-4 sm:p-6 md:p-10 text-center">
                     <span className="text-red-500 font-bold">Welcome !</span> to

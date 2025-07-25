@@ -63,9 +63,9 @@ const Navbar = () => {
           { icon: <Bell color="gray" size={24} />, label: "Notifications", key: "/noti" },
           { icon: <Plus color="white" size={24} />, label: "Add New", key: "/makepost", className: "bg-amber-500" },
         ].map(({ icon, label, key, className = "" }) => (
-          <div key={key} className={`p-2 group relative hover:rounded-2xl hover:bg-black/30 ${className}`}>
+          <div key={key} className={`p-2 group relative hover:rounded-2xl hover:bg-base-100/30 ${className}`}>
             <a href={key} >{icon}</a>
-            <span className="absolute bottom-10 left-1/2 -translate-x-1/2 w-max bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span className="absolute bottom-10 left-1/2 -translate-x-1/2 w-max bg-base-100 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {label}
             </span>
           </div>

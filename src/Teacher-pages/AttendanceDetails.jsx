@@ -88,7 +88,7 @@ function Attendance() {
                     </thead>
                     <tbody>
                         {res.data.map((record) => (
-                            <tr key={record._id} className="bg-black border-b">
+                            <tr key={record._id} className="bg-base-100 border-b">
                                 <td className="px-4 py-2">{new Date(record.date).toLocaleString()}</td>
                                 {record.attendanceRecords.map((attendance, index) => (
                                     <tr key={attendance._id}>
@@ -106,7 +106,7 @@ function Attendance() {
     };
 
     return (
-        <div className="bg-black text-white flex flex-col">
+        <div className="bg-base-100 text-white flex flex-col">
             {/* Attendance by Course */}
             <div className="flex flex-col gap-1 border p-2 rounded m-2 relative w-full sm:w-3/4">
                 <h1>Attendance By Course Code</h1>

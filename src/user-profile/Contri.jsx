@@ -89,7 +89,7 @@ const ContributionGraph = ({ activity }) => {
 
             {tooltip.visible && tooltip.value && (
                 <div
-                    className="absolute bg-black text-white text-xs px-2 py-1 rounded shadow-md pointer-events-none z-50"
+                    className="absolute bg-base-100 text-white text-xs px-2 py-1 rounded shadow-md pointer-events-none z-50"
                     style={{
                         top: tooltip.y,
                         left: tooltip.x,

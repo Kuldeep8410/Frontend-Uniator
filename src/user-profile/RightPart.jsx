@@ -58,7 +58,7 @@ function RightPart() {
     return (
         <div className="w-full p-4 grid grid-cols-1 md:grid-cols-2 gap-6 bg-base-100 text-white">
             {/* Solved Questions */}
-            <div className="bg-black/50 rounded-xl shadow p-4 flex flex-col items-center">
+            <div className="bg-base-100/50 rounded-xl shadow p-4 flex flex-col items-center">
                 <h2 className="text-lg font-semibold mb-4">Solved Questions</h2>
                 <ResponsiveContainer width="100%" height={200}>
                     <RadialBarChart
@@ -86,7 +86,7 @@ function RightPart() {
             </div>
 
             {/* Class Attendance */}
-            <div className="bg-black/50 rounded-xl shadow p-4 flex flex-col items-center">
+            <div className="bg-base-100/50 rounded-xl shadow p-4 flex flex-col items-center">
                 <h2 className="text-lg font-semibold mb-4">Class Attendance</h2>
                 <ResponsiveContainer width="100%" height={200}>
                     <RadialBarChart

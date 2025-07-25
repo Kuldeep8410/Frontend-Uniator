@@ -1,6 +1,6 @@
 export default function StatsSection() {
     return (
-      <div className="relative bg-black text-white flex flex-col items-center justify-center min-h-screen px-6">
+      <div className="relative bg-base-100 text-white flex flex-col items-center justify-center min-h-screen px-6">
         <h1 className="text-7xl font-bold bg-gradient-to-r from-green-400 to-green-600 text-transparent bg-clip-text">
           Fast Anywhere
         </h1>

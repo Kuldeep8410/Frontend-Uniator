@@ -53,12 +53,12 @@ function TodoHome() {
     };
 
     return (
-        <div className="flex flex-col gap-2 justify-center items-center text-white bg-black h-screen">
+        <div className="flex flex-col gap-2 justify-center items-center text-white bg-base-100 h-screen">
 
 
 
 
-            <h1 className="h-10 bg-black content-center text-blue-300 text-3xl font-bold border-b-2  border-spacing-3">Make Your Daily Task Here</h1>
+            <h1 className="h-10 bg-base-100 content-center text-blue-300 text-3xl font-bold border-b-2  border-spacing-3">Make Your Daily Task Here</h1>
 
             <label className="flex flex-col m-2 p-2 border rounded-xl content-center gap-3 hover:text-yellow-200 pl-3 md:w-[600px] md:p-4">
 
@@ -71,14 +71,14 @@ function TodoHome() {
                     value={todolist.task}
                     onChange={handleTask}
                 />
-                <button className="bg-gradient-to-tr from-red-600  h-10 pl-4 pr-4 text-cyan-300 rounded-sm hover:bg-black" onClick={addHandler}>Add</button>
+                <button className="bg-gradient-to-tr from-red-600  h-10 pl-4 pr-4 text-cyan-300 rounded-sm hover:bg-base-100" onClick={addHandler}>Add</button>
             </label>
             <h1 className=" flex  border-b-8 border-red-500 mt-2 md:w-[600px] text-2xl text-emerald-400 justify-center">Your current tasks</h1>
             {taskList.length > 0 ? (
                     taskList.map((task, index) => (
                     <div
                         key={index}
-                        className="flex flex-col gap-3 min-h-20 border m-2 p-3 content-center place-content-between items-center rounded-xl justify-between md:w-[600px] bg-black/50 shadow-lg bg-opacity-10"
+                        className="flex flex-col gap-3 min-h-20 border m-2 p-3 content-center place-content-between items-center rounded-xl justify-between md:w-[600px] bg-base-100/50 shadow-lg bg-opacity-10"
                     >
                         <h1 className="break-words overflow-x-hidden w-full text-lg">{index + 1}. {task.task}</h1>
                         <div className="flex flex-row gap-3 items-center justify-between w-full">

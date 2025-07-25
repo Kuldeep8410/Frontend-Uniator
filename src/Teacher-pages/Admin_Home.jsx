@@ -24,7 +24,7 @@ function AdminHome() {
     }
 
     return (
-        <div className="flex flex-col bg-black">
+        <div className="flex flex-col bg-base-100">
             <div className="mt-20 flex flex-col relative items-center justify-center p-5 text-white md:px-10 sm:px-5">
                     <div className="backdrop-blur-sm bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl">
                         <h1 className="text-3xl text-white font-bold text-center mb-4 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
@@ -43,7 +43,7 @@ function AdminHome() {
                     </div>
                 </div>
 
-            <div className="flex flex-col sm:flex-row relative z-0 rounded-2xl gap-4 px-5 sm:px-10 py-10 bg-black">
+            <div className="flex flex-col sm:flex-row relative z-0 rounded-2xl gap-4 px-5 sm:px-10 py-10 bg-base-100">
                 {/* Sidebar with Multiple Buttons */}
                 <div className="sm:w-1/5 w-full bg-white/10 sm:h-screen rounded-2xl p-4">
                     <AdminPro />
