@@ -143,7 +143,7 @@ function App() {
             <Route path="User-profile" element={<UserProfile />} />
             <Route path="Update" element={<UpdateProfile />} />
             <Route path="chat" element = {<Chat />} />
-             <Route path="notification" element = {<NotificationManager />} />
+            <Route path="notification" element = {<NotificationManager />} />
 
           </Routes>
 
@@ -151,18 +151,7 @@ function App() {
 
 
           {/* <HashLoader color='green' /> */}
-          <div className="grid grid-cols-3 text-xl text-white bg-base-100 z-20 p-5 ">
-            {/* <a href="/otpvarification">otpvarification</a> */}
-            {/* <a href="/qrscanner">qrscanner</a> */}
-            {/* <a href="/qrgenerator">qrgenerator</a> */}
-            <a href="/admin-dashboard">teacher-dashboard</a>
-            <a href="/admin-login">Teacher-login</a>
-            {/* <a href="/user-home">user-home</a> */}
-            {/* <a href="/discussion/makepost">Mkae posts</a> */}
-            {/* <a href="/upload">Image Upload</a> */}
-            <a href="/administrator">Adminstrator Dashboard</a>
-            <a href="/administrator-login">Administrator Login</a>
-          </div>
+          
           <Footer />
         </div>
 
