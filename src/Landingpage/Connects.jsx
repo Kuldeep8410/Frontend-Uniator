@@ -90,7 +90,7 @@ function Connects() {
                     </h2>
                     
                     <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                        Join thousands of developers, creators, and innovators in our growing community. 
+                        Join a community of developers, creators, and innovators in our growing community. 
                         Let's build something amazing together!
                     </p>
                 </div>

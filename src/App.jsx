@@ -93,7 +93,7 @@ function App() {
             {/* User Routes (Protected by StudentAuthorise) */}
             <Route element={<StudentAuthorise />}>
               <Route path="/user-home" element={<UserHome />} />
-              <Route path="/todo-home" element={<TodoHome />} />
+              {/* <Route path="/todo-home" element={<TodoHome />} /> */}
 
               <Route path="/qrscanner" element={<Qr_res />} />
               <Route path="/discussion" element={<HomeDiscussion />} />
@@ -144,6 +144,7 @@ function App() {
             <Route path="Update" element={<UpdateProfile />} />
             <Route path="chat" element = {<Chat />} />
             <Route path="notification" element = {<NotificationManager />} />
+            <Route path="/todo-home" element={<TodoHome />} />
 
           </Routes>
 
