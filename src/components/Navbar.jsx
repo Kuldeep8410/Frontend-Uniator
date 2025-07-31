@@ -6,11 +6,43 @@ import ThemeSelector from "../themectrl";
 import ProfileIcon from "../ui/profileicon";
 import { House, Plus, LayoutGrid, Mail, Bell, Search } from "lucide-react";
 
+
+const AuthButtons = () => {
+
+  return (
+    <>
+
+    </>
+  );
+};
+
+
+
 const Navbar = () => {
   const { isAuthenticated } = useAuth0();
   const [isOpen, setIsOpen] = useState(false);
   const [isLogged, setLogged] = useState(false);
   const [toggle, setToggle] = useState(null); // 🔧 Added missing state
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Check login status on component mount
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("UserData"));
+    if (userData && userData.success) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  
+
+  const handleLogout = () => {
+    localStorage.removeItem("UserData");
+    setIsLoggedIn(false);
+  };
+
 
   useEffect(() => {
     const localData = localStorage.getItem("UserData");
@@ -36,7 +68,11 @@ const Navbar = () => {
               <NavLink to="/" className="hover:text-white hover:border-b-2 border-blue-400">Home</NavLink>
               <NavLink to="/user-home" className="hover:text-white hover:border-b-2 border-blue-400">User-Access</NavLink>
               <NavLink to="/login" className="hover:text-white hover:border-b-2 border-blue-400">
-                {isLogged ? <LogoutButton logout={isLogged} setLogout={setLogged} /> : "Login"}
+                {isLoggedIn ? (
+                  <button onClick={handleLogout}>Logout</button>
+                ) : (
+                  <button><a href="/login">Login</a></button>
+                )}
               </NavLink>
               <NavLink to="/Contact" className="hover:text-white hover:border-b-2 border-blue-400">Contact</NavLink>
               <NavLink to="/discussion" className="hover:text-white hover:border-b-2 border-blue-400">Community</NavLink>
