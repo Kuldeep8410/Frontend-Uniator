@@ -36,7 +36,7 @@ const Navbar = () => {
               <NavLink to="/" className="hover:text-white hover:border-b-2 border-blue-400">Home</NavLink>
               <NavLink to="/user-home" className="hover:text-white hover:border-b-2 border-blue-400">User-Access</NavLink>
               <NavLink to="/login" className="hover:text-white hover:border-b-2 border-blue-400">
-                {isLogged ? <LogoutButton /> : "Login"}
+                {isLogged ? <LogoutButton logout={isLogged} setLogout={setLogged} /> : "Login"}
               </NavLink>
               <NavLink to="/Contact" className="hover:text-white hover:border-b-2 border-blue-400">Contact</NavLink>
               <NavLink to="/discussion" className="hover:text-white hover:border-b-2 border-blue-400">Community</NavLink>
