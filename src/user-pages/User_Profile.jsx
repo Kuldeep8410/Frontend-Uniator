@@ -24,7 +24,7 @@ function UserProfile({ props }) {
             </div>
 
             <div>
-                <ContributionGraph />
+                // <ContributionGraph />
             </div>
         </div>
 
