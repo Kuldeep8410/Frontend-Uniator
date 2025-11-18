@@ -1,6 +1,17 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  }
-  
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://frontend-uniator.vercel.app/$1",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml" }
+      ]
+    }
+  ]
+}
