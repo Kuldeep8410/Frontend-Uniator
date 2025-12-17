@@ -12,9 +12,36 @@ function Pop_up({ close }) {
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
           🎉 Hello ji, it’s working!
         </h2>
-        <p className="text-gray-600 mb-6">
-          Please log in to unlock some cool new features 🔓✨
-        </p>
+       <p className="text-gray-600 mb-6">
+  Please log in to unlock some cool new features 🔓✨
+</p>
+
+<div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-gray-700 space-y-2">
+  <p className="font-semibold text-gray-800">🧪 Test Login Credentials</p>
+
+  <div>
+    <p><span className="font-medium">Student</span></p>
+    <p>Email: <span className="font-mono">22bcs037@smvdu.ac.in</span></p>
+    <p>Password: <span className="font-mono">123456</span></p>
+  </div>
+
+  <div>
+    <p><span className="font-medium">Teacher</span></p>
+    <p>Email: <span className="font-mono">teacher@gmail.com</span></p>
+    <p>Password: <span className="font-mono">123456</span></p>
+  </div>
+
+  <div>
+    <p><span className="font-medium">Admin</span></p>
+    <p>Email: <span className="font-mono">administrator@gmail.com</span></p>
+    <p>Password: <span className="font-mono">123456</span></p>
+  </div>
+
+  <p className="text-xs text-gray-500 mt-2">
+    ⚠️ These credentials are for testing purposes only.
+  </p>
+</div>
+
 
         <div className="flex justify-center gap-4">
           <button
